@@ -1,7 +1,7 @@
 package jfeoks.annotation;
 
-import jfeoks.api.pojo.DataFlowParameterAdapter;
-import jfeoks.api.pojo.EmptyDFParameterAdapter;
+import jfeoks.api.pojo.adapter.DataFlowParameterAdapter;
+import jfeoks.api.pojo.adapter.impl.EmptyDFParameterAdapter;
 
 import java.lang.annotation.*;
 
@@ -10,6 +10,8 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DFParamAdapter {
     Class<? extends DataFlowParameterAdapter> adapterClass() default EmptyDFParameterAdapter.class;
+
+    Class<? extends DataFlowParameterAdapter> BackAdapterClass() default EmptyDFParameterAdapter.class;
 
     PropertyValue[] propertyValues() default {};
 }

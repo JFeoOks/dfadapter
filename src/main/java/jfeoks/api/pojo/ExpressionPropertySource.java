@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class PropertySource {
+public class ExpressionPropertySource {
 
     private ExpressionParser parser;
 
     private EvaluationContext evaluationContext;
 
-    public PropertySource(ExpressionParser parser, EvaluationContext evaluationContext) {
+    public ExpressionPropertySource(ExpressionParser parser, EvaluationContext evaluationContext) {
         this.parser = parser;
         this.evaluationContext = evaluationContext;
     }

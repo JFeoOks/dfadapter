@@ -1,6 +1,7 @@
 package jfeoks;
 
-import jfeoks.api.pojo.PropertySource;
+import jfeoks.api.pojo.ExpressionPropertySource;
+import jfeoks.model.Smile;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -19,23 +20,28 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 public class AppConfig {
 
     @Bean
-    public ExpressionParser getExpressionParser() {
+    public ExpressionParser expressionParser() {
         return new SpelExpressionParser();
     }
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     @Autowired
-    public PropertySource getPropertySource(ExpressionParser parser, EvaluationContext evaluationContext) {
-        return new PropertySource(parser, evaluationContext);
+    public ExpressionPropertySource propertySource(ExpressionParser parser, EvaluationContext evaluationContext) {
+        return new ExpressionPropertySource(parser, evaluationContext);
     }
 
     @Bean
     @Autowired
-    public EvaluationContext getStandardEvaluationContext(BeanFactory beanFactory) {
+    public StandardEvaluationContext standardEvaluationContext(BeanFactory beanFactory) {
         StandardEvaluationContext evContext = new StandardEvaluationContext();
         evContext.setBeanResolver(new BeanFactoryResolver(beanFactory));
 
         return evContext;
+    }
+
+    @Bean
+    public Smile smile() {
+        return new Smile();
     }
 }
