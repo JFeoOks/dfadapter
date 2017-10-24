@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f590d6df-9308-4f24-b7be-c36f334d5ac1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/DFAdapterUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/model/Smile.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/jfeoks/api/pojo/DFAdapterProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/jfeoks/api/pojo/DataFlowParameterAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/jfeoks/api/pojo/EmptyDFParameterAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/jfeoks/api/pojo/HelloWorldDataFlowParameterAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/jfeoks/api/pojo/PropertySource.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jfeoks/AppConfig.class" afterPath="$PROJECT_DIR$/target/classes/jfeoks/AppConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jfeoks/Main.class" afterPath="$PROJECT_DIR$/target/classes/jfeoks/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jfeoks/annotation/DFParamAdapter.class" afterPath="$PROJECT_DIR$/target/classes/jfeoks/annotation/DFParamAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jfeoks/model/HelloWorld.class" afterPath="$PROJECT_DIR$/target/classes/jfeoks/model/HelloWorld.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spel_and_annot.iml" afterPath="$PROJECT_DIR$/spel_and_annot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/AppConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/Main.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/annotation/DFParamAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/annotation/DFParamAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/model/HelloWorld.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/model/HelloWorld.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/DFAdapterProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/adapter/DFAdapterProcessor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/DataFlowParameterAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/adapter/DataFlowParameterAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/EmptyDFParameterAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/adapter/impl/EmptyDFParameterAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/HelloWorldDataFlowParameterAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/adapter/impl/HelloWorldDataFlowParameterAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/PropertySource.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/api/pojo/ExpressionPropertySource.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,8 +29,8 @@
       <file leaf-file-name="TypeConstraintMappingContextImpl.java" pinned="false" current-in-tab="true">
         <entry file="jar://$USER_HOME$/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.2.Final/hibernate-validator-6.0.2.Final-sources.jar!/org/hibernate/validator/internal/cfg/context/TypeConstraintMappingContextImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="82" column="89" lean-forward="true" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+            <state relative-caret-position="697">
+              <caret line="115" column="34" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -82,6 +60,7 @@
       <find>gettypena</find>
       <find>getDecla</find>
       <find>getDec</find>
+      <find>9146711370313781457</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,7 +124,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1692" />
@@ -423,16 +402,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508321579147</updated>
-      <workItem from="1508321585277" duration="39387000" />
+      <workItem from="1508321585277" duration="41753000" />
     </task>
+    <task id="LOCAL-00001" summary="minor update">
+      <created>1508485064503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508485064503</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39387000" />
+    <option name="totallyTimeSpent" value="41753000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -453,8 +439,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -476,6 +462,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor update" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -929,8 +919,8 @@
     </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/hibernate/validator/hibernate-validator/6.0.2.Final/hibernate-validator-6.0.2.Final-sources.jar!/org/hibernate/validator/internal/cfg/context/TypeConstraintMappingContextImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="82" column="89" lean-forward="true" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+        <state relative-caret-position="697">
+          <caret line="115" column="34" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
           <folding />
         </state>
       </provider>
