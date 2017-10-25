@@ -107,6 +107,21 @@ public class POJOProcessor {
         }
     }
 
+    private static void doWithFields(Class<?> cls, AccessibleObjectCallback callback) throws Exception {
+        List<Field> fields = FIELDS_CACHE.get(cls);
+        for (Field field : fields) {
+            callback.doWith(field);
+        }
+    }
+
+
+    private static void doWithMethods(Class<?> cls, AccessibleObjectCallback callback) throws Exception {
+        List<Method> methods = METHODS_CACHE.get(cls);
+        for (Method method : methods) {
+            callback.doWith(method);
+        }
+    }
+
     public static LoadingCache<Class, List<Field>> buildFieldsCache(final Class<? extends Annotation> annotation) {
         return CacheBuilder.newBuilder().build(new CacheLoader<Class, List<Field>>() {
             @Override
@@ -155,23 +170,6 @@ public class POJOProcessor {
             }
         });
     }
-
-    private static void doWithFields(Class<?> cls, AccessibleObjectCallback callback) throws Exception {
-        List<Field> fields = FIELDS_CACHE.get(cls);
-        for (Field field : fields) {
-            callback.doWith(field);
-        }
-    }
-
-
-    private static void doWithMethods(Class<?> cls, AccessibleObjectCallback callback) throws Exception {
-        List<Method> methods = METHODS_CACHE.get(cls);
-        for (Method method : methods) {
-            callback.doWith(method);
-        }
-    }
-
-
 }
 /*
  WITHOUT LIMITING THE FOREGOING, COPYING, REPRODUCTION, REDISTRIBUTION,
