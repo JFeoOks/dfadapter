@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface DFBiderecrtionalParamAdapter {
+public @interface DFBidirectionalParamAdapter {
 
     Class<? extends DataFlowParameterAdapter> readAdapterClass();
 

@@ -22,8 +22,14 @@ import java.lang.reflect.Field;
  * Created by egorz on 4/27/2017.
  */
 public class FieldPropertyExtractor implements PropertyExtractor<Field> {
+
     @Override
-    public <R> R extract(Field field, Object source) throws Exception {
+    public String extractName(Field field) {
+        return field.getName();
+    }
+
+    @Override
+    public <R> R extractValue(Field field, Object source) throws Exception {
         return (R) field.get(source);
     }
 }

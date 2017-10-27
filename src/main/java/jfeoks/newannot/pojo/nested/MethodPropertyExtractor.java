@@ -16,14 +16,21 @@
 
 package jfeoks.newannot.pojo.nested;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
  * Created by egorz on 4/27/2017.
  */
 public class MethodPropertyExtractor implements PropertyExtractor<Method> {
+
     @Override
-    public <R> R extract(Method method, Object source) throws Exception {
+    public String extractName(Method method) {
+        return method.getName();
+    }
+
+    @Override
+    public <R> R extractValue(Method method, Object source) throws Exception {
         if (method.getParameterTypes().length > 0)
             throw new UnsupportedOperationException("can't get value from the method with arguments");
         return (R) method.invoke(source);

@@ -17,12 +17,16 @@
 package jfeoks.newannot.pojo.nested;
 
 import java.lang.reflect.AccessibleObject;
+import java.lang.reflect.Field;
 
 /**
  * Created by egorz on 4/27/2017.
  */
-interface PropertyExtractor<T extends AccessibleObject> {
-    <R> R extract(T accessibleObject, Object source) throws Exception;
+public interface PropertyExtractor<T extends AccessibleObject> {
+
+    String extractName(T accessibleObject);
+
+    <R> R extractValue(T accessibleObject, Object source) throws Exception;
 }
 /*
  WITHOUT LIMITING THE FOREGOING, COPYING, REPRODUCTION, REDISTRIBUTION,

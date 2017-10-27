@@ -15,8 +15,7 @@
 */
 package jfeoks.newannot.pojo.update;
 
-import java.util.Map;
-
 public interface DataFlowParameterAdapter<S, D> {
-    D convert(S source, Map<String, Object> properties);
+
+    D convert(S source, ExpressionPropertySource propertySource);
 }

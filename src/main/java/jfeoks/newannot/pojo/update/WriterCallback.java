@@ -14,22 +14,42 @@
  
 */
 
-package jfeoks.newannot.pojo.nested;
+package jfeoks.newannot.pojo.update;
+
+import jfeoks.newannot.pojo.nested.*;
+import jfeoks.newannot.pojo.nested.DataFlowParameterAdapter;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 /**
  * Created by egorz on 4/27/2017.
  */
-public class PropertyExtractorBuilder {
-    public static <T extends AccessibleObject> PropertyExtractor createExtractor(Class<T> type) {
-        if (type.isAssignableFrom(Field.class))
-            return new FieldPropertyExtractor();
-        if (type.isAssignableFrom(Method.class))
-            return new MethodPropertyExtractor();
-        throw new UnsupportedOperationException("unsupported type for reading properties");
+public class WriterCallback implements AccessibleObjectCallback {
+
+    Properties properties;
+    Object target;
+
+    public WriterCallback(Properties properties, Object target) {
+        this.properties = properties;
+        this.target = target;
+    }
+
+    @Override
+    public <T extends AccessibleObject> void doWith(T accessibleObject) throws Exception {
+        DFParam dfParam = accessibleObject.getAnnotation(DFParam.class);
+        String propertyName = StringUtils.isNotEmpty(dfParam.name()) ? dfParam.name() : accessibleObject.toString();
+
+        Object variable = properties.getVariable(propertyName);
+
+        if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {
+            DFParamAdapter dfParamAdapter = accessibleObject.getAnnotation(DFParamAdapter.class);
+            Class<? extends DataFlowParameterAdapter> clz = dfParamAdapter.adapterClass();
+            DataFlowParameterAdapter adapter = clz.newInstance();
+            variable = adapter.convert(variable);
+        }
+
+        PropertyPropogatorBuilder.createPropogator(accessibleObject.getClass()).propogate(target, accessibleObject, variable);
     }
 }
 /*

@@ -44,7 +44,7 @@ public class ReaderCallback implements AccessibleObjectCallback {
 
         accessibleObject.setAccessible(true);
 
-        Object value = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass()).extract(accessibleObject, instance);
+        Object value = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass()).extractValue(accessibleObject, instance);
 
         try {
             if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {

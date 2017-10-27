@@ -1,9 +1,6 @@
-package jfeoks.old;
+package jfeoks.newannot.pojo.update;
 
-import jfeoks.old.api.pojo.ExpressionPropertySource;
-import jfeoks.old.model.Smile;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,16 +14,11 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 @Configuration
 @ComponentScan(basePackages = "jfeoks")
-public class AppConfig {
-
-    @Bean
-    public ExpressionParser expressionParser() {
-        return new SpelExpressionParser();
-    }
+public class UpdatedAdapterConfiguration {
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public ExpressionPropertySource propertySource(ExpressionParser parser, EvaluationContext evaluationContext) {
+    public ExpressionPropertySource expressionPropertySourceBuilder(ExpressionParser parser, EvaluationContext evaluationContext) {
         return new ExpressionPropertySource(parser, evaluationContext);
     }
 
@@ -39,7 +31,12 @@ public class AppConfig {
     }
 
     @Bean
-    public Smile smile() {
-        return new Smile();
+    public ExpressionParser expressionParser() {
+        return new SpelExpressionParser();
+    }
+
+    @Bean
+    public POJOProcessor pojoProcessor() {
+        return new POJOProcessor();
     }
 }
