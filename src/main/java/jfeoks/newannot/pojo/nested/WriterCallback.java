@@ -47,7 +47,7 @@ public class WriterCallback implements AccessibleObjectCallback {
             variable = adapter.convert(variable);
         }
 
-        PropertyPropogatorBuilder.createPropogator(accessibleObject.getClass()).propogate(target, accessibleObject, variable);
+        PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propogate(target, accessibleObject, variable);
     }
 }
 /*

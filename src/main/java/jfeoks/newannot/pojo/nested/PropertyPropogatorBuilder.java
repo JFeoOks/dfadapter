@@ -23,7 +23,7 @@ import java.lang.reflect.Field;
  * Created by egorz on 4/27/2017.
  */
 public class PropertyPropogatorBuilder {
-    public static <T extends AccessibleObject> PropertyPropagator createPropogator(Class<T> type) {
+    public static <T extends AccessibleObject> PropertyPropagator createPropagator(Class<T> type) {
         if (type.isAssignableFrom(Field.class))
             return new FieldPropertyPropogator();
         throw new UnsupportedOperationException("unsupported type for reading properties");

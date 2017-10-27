@@ -18,22 +18,18 @@ package jfeoks.newannot.pojo.update;
 
 
 import jfeoks.newannot.pojo.nested.*;
-import jfeoks.newannot.pojo.nested.DataFlowParameterAdapter;
-import jfeoks.newannot.pojo.update.annotation.DFBidirectionalParamAdapter;
-import jfeoks.newannot.pojo.update.annotation.PropertyValue;
-import jfeoks.newannot.pojo.update.config.StaticContextHolder;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.reflect.AccessibleObject;
 
-public class ReaderCallback implements AccessibleObjectCallback {
+public class ReaderCallback extends AbstractCallback {
 
     private static ShowPropertyPolicy DEFAULT_SHOW_PROPERTY_POLICY = ShowPropertyPolicy.SHOW;
 
-    Object instance;
-    MockStartParametersBuilder builder;
-    boolean declareOnly;
+    private Object instance;
+    private MockStartParametersBuilder builder;
+    private boolean declareOnly;
 
     public ReaderCallback(Object instance, MockStartParametersBuilder builder, boolean declareOnly) {
         this.instance = instance;
@@ -44,17 +40,17 @@ public class ReaderCallback implements AccessibleObjectCallback {
     @Override
     @SuppressWarnings("unchecked")
     public <T extends AccessibleObject> void doWith(T accessibleObject) throws Exception {
-        String propertyName = null;
-        ShowPropertyPolicy showPropertyPolicy = null;
+        String propertyName;
+        ShowPropertyPolicy showPropertyPolicy;
         boolean mdcAware = false;
 
-        DFParam annotation = AnnotationUtils.getAnnotation(accessibleObject, DFParam.class);
+        DFParam dfParam = AnnotationUtils.getAnnotation(accessibleObject, DFParam.class);
         PropertyExtractor propertyExtractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
 
-        if (annotation != null) {
-            propertyName = StringUtils.defaultIfBlank(annotation.name(), propertyExtractor.extractName(accessibleObject));
-            showPropertyPolicy = annotation.showPropertyPolicy();
-            mdcAware = annotation.mdcAware();
+        if (dfParam != null) {
+            propertyName = StringUtils.defaultIfBlank(dfParam.name(), propertyExtractor.extractName(accessibleObject));
+            showPropertyPolicy = dfParam.showPropertyPolicy();
+            mdcAware = dfParam.mdcAware();
         } else {
             propertyName = propertyExtractor.extractName(accessibleObject);
             showPropertyPolicy = DEFAULT_SHOW_PROPERTY_POLICY;
@@ -63,48 +59,19 @@ public class ReaderCallback implements AccessibleObjectCallback {
         accessibleObject.setAccessible(true);
         Object value = propertyExtractor.extractValue(accessibleObject, instance);
 
-        try {
-            value = convertValue(accessibleObject, value);
-        } catch (InstantiationException ie) {
-//            ExceptionUtils.<RuntimeException>castAndThrow(ie);
-        }
         if (value == null || declareOnly)
             builder.declareVariable(propertyName, mdcAware);
-        else
+        else {
+            try {
+                value = convertValue(accessibleObject, value);
+            } catch (InstantiationException ie) {
+//            ExceptionUtils.<RuntimeException>castAndThrow(ie);
+            }
+
             builder.setVariable(propertyName, value, mdcAware);
+        }
 
         builder.setShowPropertyPolicy(propertyName, showPropertyPolicy);
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T extends AccessibleObject> Object convertValue(T accessibleObject, Object value) throws IllegalAccessException, InstantiationException {
-        if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {
-            Class<? extends DataFlowParameterAdapter> aClass = accessibleObject.getAnnotation(DFParamAdapter.class).adapterClass();
-
-            DataFlowParameterAdapter converter = aClass.newInstance();
-            return converter.convert(value);
-        } else if (accessibleObject.isAnnotationPresent(DFBidirectionalParamAdapter.class)) {
-            DFBidirectionalParamAdapter adapter = accessibleObject.getAnnotation(DFBidirectionalParamAdapter.class);
-            Class<? extends jfeoks.newannot.pojo.update.DataFlowParameterAdapter> aClass = adapter.readAdapterClass();
-
-            jfeoks.newannot.pojo.update.DataFlowParameterAdapter converter = aClass.newInstance();
-            ExpressionPropertySource properties = buildPropertySource(adapter.propertyValues());
-
-            return converter.convert(value, properties);
-        }
-
-        return value;
-    }
-
-    private ExpressionPropertySource buildPropertySource(PropertyValue[] propertyValues) {
-        //TODO It's not a good solution
-        ExpressionPropertySource expressionPropertySource = StaticContextHolder.getBean(ExpressionPropertySource.class);
-
-        for (PropertyValue value : propertyValues) {
-            expressionPropertySource.put(value.name(), value.spelExpression());
-        }
-
-        return expressionPropertySource;
     }
 }
 /*

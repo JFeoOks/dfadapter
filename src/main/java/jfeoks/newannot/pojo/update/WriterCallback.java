@@ -17,7 +17,6 @@
 package jfeoks.newannot.pojo.update;
 
 import jfeoks.newannot.pojo.nested.*;
-import jfeoks.newannot.pojo.nested.DataFlowParameterAdapter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.AccessibleObject;
@@ -25,10 +24,10 @@ import java.lang.reflect.AccessibleObject;
 /**
  * Created by egorz on 4/27/2017.
  */
-public class WriterCallback implements AccessibleObjectCallback {
+public class WriterCallback extends AbstractCallback {
 
-    Properties properties;
-    Object target;
+    private Properties properties;
+    private Object target;
 
     public WriterCallback(Properties properties, Object target) {
         this.properties = properties;
@@ -36,21 +35,30 @@ public class WriterCallback implements AccessibleObjectCallback {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public <T extends AccessibleObject> void doWith(T accessibleObject) throws Exception {
-        DFParam dfParam = accessibleObject.getAnnotation(DFParam.class);
-        String propertyName = StringUtils.isNotEmpty(dfParam.name()) ? dfParam.name() : accessibleObject.toString();
+        String propertyName = getPropertyName(accessibleObject);
+        Object value = properties.getVariable(propertyName);
 
-        Object variable = properties.getVariable(propertyName);
+        if (value == null) return;
 
-        if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {
-            DFParamAdapter dfParamAdapter = accessibleObject.getAnnotation(DFParamAdapter.class);
-            Class<? extends DataFlowParameterAdapter> clz = dfParamAdapter.adapterClass();
-            DataFlowParameterAdapter adapter = clz.newInstance();
-            variable = adapter.convert(variable);
-        }
+        value = convertValue(accessibleObject, value);
 
-        PropertyPropogatorBuilder.createPropogator(accessibleObject.getClass()).propogate(target, accessibleObject, variable);
+        PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propogate(target, accessibleObject, value);
     }
+
+    private <T extends AccessibleObject> String getPropertyName(T accessibleObject) {
+        DFParam dfParam = accessibleObject.getAnnotation(DFParam.class);
+        PropertyExtractor extractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
+
+        String name = null;
+        if (dfParam != null) name = dfParam.name();
+
+        return StringUtils.defaultIfEmpty(name, extractor.extractName(accessibleObject));
+
+    }
+
+
 }
 /*
  WITHOUT LIMITING THE FOREGOING, COPYING, REPRODUCTION, REDISTRIBUTION,
