@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f590d6df-9308-4f24-b7be-c36f334d5ac1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/AbstractCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/PropertiesPropagator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/AccessType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoAnnotatedTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoDefaultTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_2_Final.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropogatorBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropogatorBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/WriterCallback.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/WriterCallback.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ReaderCallback.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ReaderCallback.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spel_and_annot.iml" afterPath="$PROJECT_DIR$/spel_and_annot.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StartParametersProvider.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StartParametersProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/IncludeAllDFParams.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/IncludeAllDFParams.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/ParamsExtractorFactory.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/ParamsExtractorFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,81 +43,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReaderCallback.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ReaderCallback.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1270#1300#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WriterCallback.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1034#1064#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataFlowParameterAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/DataFlowParameterAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DFParamAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/DFParamAdapter.java">
+      <file leaf-file-name="IncludeAllDFParams.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/IncludeAllDFParams.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="26" column="44" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertyPropogatorBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropogatorBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="25" column="77" lean-forward="false" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractCallback.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/AbstractCallback.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#476#506#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataFlowParameterAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DataFlowParameterAdapter.java">
+      <file leaf-file-name="ParamsExtractorFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/ParamsExtractorFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="153">
+              <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultParamsExtractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PojoDefaultTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoDefaultTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="110" column="47" lean-forward="false" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="47" />
+              <folding>
+                <element signature="e#3735#3736#0" expanded="true" />
+                <element signature="e#3775#3776#0" expanded="true" />
+                <element signature="e#3861#3862#0" expanded="true" />
+                <element signature="e#3919#3920#0" expanded="true" />
+                <element signature="e#3962#3963#0" expanded="true" />
+                <element signature="e#4000#4001#0" expanded="true" />
+                <element signature="e#4083#4084#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
+                <element signature="e#4179#4180#0" expanded="true" />
+                <element signature="e#4217#4218#0" expanded="true" />
+                <element signature="e#4300#4301#0" expanded="true" />
+                <element signature="e#4354#4355#0" expanded="true" />
+                <element signature="e#4409#4410#0" expanded="true" />
+                <element signature="e#4456#4457#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultParamsExtractorTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,6 +148,13 @@
       <find>tostring</find>
       <find>beanfacto</find>
       <find>create</find>
+      <find>METHODS_</find>
+      <find>write</find>
+      <find>ExpressionFactory</find>
+      <find>el</find>
+      <find>hiber</find>
+      <find>set</find>
+      <find>getExcludedMethodBiginteger</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,18 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/Variables.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/WriterCallback.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/Properties.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/MockSessionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/MockStartParametersBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/MockStartParameters.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/DFBiderecrtionalParamAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/PropertyValue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/AdapterMetaDataProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/AnnotationMetaDataProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/annotation/processor/DFAnnotationProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/annotation/processor/impl/ClassAnnotationProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/DfParamCacheHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/POJOProcessor.java" />
@@ -180,12 +181,9 @@
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DefaultParamsExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ParamsExtractorFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/AnnotatedParamsExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StartParametersProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/POJOProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DFParamAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DFBiderecrtionalParamAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/DefaultParamsExtractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyExtractorBuilder.java" />
         <option value="$USER_HOME$/.m2/repository/org/springframework/spring-core/4.1.3.RELEASE/spring-core-4.1.3.RELEASE.jar!/org/springframework/core/annotation/AnnotationUtils.class" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/FieldPropertyExtractor.java" />
@@ -195,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/old/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/UpdatedAdapterConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ExpressionPropertySourceBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StaticContextHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DataFlowParameterAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropagator.java" />
@@ -205,7 +202,23 @@
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/Variables.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/WriterCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ReaderCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/POJOProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StartParametersProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/PropertiesPropagator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractor.java" />
+        <option value="$USER_HOME$/.m2/repository/com/google/guava/guava/23.0/guava-23.0.jar!/com/google/common/cache/CacheLoader.class" />
+        <option value="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/AccessType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/IncludeAllDFParams.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/ParamsExtractorFactory.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoDefaultTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractorTest.java" />
       </list>
     </option>
   </component>
@@ -343,7 +356,108 @@
               <item name="newannot" type="462c0819:PsiDirectoryNode" />
               <item name="pojo" type="462c0819:PsiDirectoryNode" />
               <item name="update" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="update" type="462c0819:PsiDirectoryNode" />
+              <item name="extractor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="update" type="462c0819:PsiDirectoryNode" />
+              <item name="extractor" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="update" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="update" type="462c0819:PsiDirectoryNode" />
+              <item name="extractor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jfeoksspringspelandannot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spel_and_annot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jfeoks" type="462c0819:PsiDirectoryNode" />
+              <item name="newannot" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="update" type="462c0819:PsiDirectoryNode" />
+              <item name="extractor" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -369,11 +483,11 @@
       <recent name="jfeoks.newannot.pojo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="jfeoks.newannot.pojo.update.extractor.impl" />
       <recent name="jfeoks.newannot.pojo.update" />
       <recent name="jfeoks.newannot.pojo" />
       <recent name="jfeoks.newannot" />
       <recent name="jfeoks.api.pojo.adapter.impl" />
-      <recent name="jfeoks.api.pojo.adapter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projects\Sandbox\spel_and_annot\src\main\java\jfeoks\newannot" />
@@ -501,44 +615,131 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="ExpressionPropertySource" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod">
+    <configuration name="AnnotatedParamsExtractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="jfeoks.old.api.pojo.adapter.*" />
+          <option name="PATTERN" value="jfeoks.newannot.pojo.update.extractor.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="jfeoks.old.api.pojo.ExpressionPropertySource" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="spel_and_annot" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="jfeoks.newannot.pojo.update.extractor.impl" />
+      <option name="MAIN_CLASS_NAME" value="jfeoks.newannot.pojo.update.extractor.impl.AnnotatedParamsExtractorTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="spel_and_annot" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="AnnotatedParamsExtractorTest.extractAnnotatedMethodRightWay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="jfeoks.old.*" />
+          <option name="PATTERN" value="jfeoks.newannot.pojo.update.extractor.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="jfeoks.old.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <module name="spel_and_annot" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="jfeoks.newannot.pojo.update.extractor.impl" />
+      <option name="MAIN_CLASS_NAME" value="jfeoks.newannot.pojo.update.extractor.impl.AnnotatedParamsExtractorTest" />
+      <option name="METHOD_NAME" value="extractAnnotatedMethodRightWay" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="spel_and_annot" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
+    </configuration>
+    <configuration name="DefaultParamsExtractorTest.extractDefaultFieldsRightWayAccessTypeMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="jfeoks.newannot.pojo.update.extractor.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spel_and_annot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="jfeoks.newannot.pojo.update.extractor.impl" />
+      <option name="MAIN_CLASS_NAME" value="jfeoks.newannot.pojo.update.extractor.impl.DefaultParamsExtractorTest" />
+      <option name="METHOD_NAME" value="extractDefaultFieldsRightWayAccessTypeMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeField" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="jfeoks.newannot.pojo.update.extractor.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spel_and_annot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="jfeoks.newannot.pojo.update.extractor.impl" />
+      <option name="MAIN_CLASS_NAME" value="jfeoks.newannot.pojo.update.extractor.impl.DefaultParamsExtractorTest" />
+      <option name="METHOD_NAME" value="extractDefaultMethodRightWayAccessTypeField" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="jfeoks.newannot.pojo.update.extractor.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spel_and_annot" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="jfeoks.newannot.pojo.update.extractor.impl" />
+      <option name="MAIN_CLASS_NAME" value="jfeoks.newannot.pojo.update.extractor.impl.DefaultParamsExtractorTest" />
+      <option name="METHOD_NAME" value="extractDefaultMethodRightWayAccessTypeMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -621,14 +822,20 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.ExpressionPropertySource" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.AnnotatedParamsExtractorTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.AnnotatedParamsExtractorTest.extractAnnotatedMethodRightWay" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DefaultParamsExtractorTest.extractDefaultFieldsRightWayAccessTypeMethod" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeField" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ExpressionPropertySource" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DefaultParamsExtractorTest.extractDefaultFieldsRightWayAccessTypeMethod" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeField" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.AnnotatedParamsExtractorTest.extractAnnotatedMethodRightWay" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AnnotatedParamsExtractorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -647,7 +854,7 @@
       <updated>1508321579147</updated>
       <workItem from="1508321585277" duration="41955000" />
       <workItem from="1508841581175" duration="1088000" />
-      <workItem from="1508842956167" duration="41225000" />
+      <workItem from="1508842956167" duration="48558000" />
     </task>
     <task id="LOCAL-00001" summary="minor update">
       <created>1508485064503</created>
@@ -712,11 +919,50 @@
       <option name="project" value="LOCAL" />
       <updated>1509112323137</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="writer callback">
+      <created>1509114698814</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1509114698814</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="AnnotatedParamsExtractorTest_extractMethodRightWay - 2017.10.27 at 18h 44m 25s.xml">
+      <configuration name="AnnotatedParamsExtractorTest.extractMethodRightWay" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultFieldsRightWay - 2017.10.27 at 19h 16m 53s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultFieldsRightWay" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultFieldsRightWay - 2017.10.27 at 19h 17m 06s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultFieldsRightWay" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultFieldsRightWayAccessTypeMethod - 2017.10.27 at 19h 21m 52s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultFieldsRightWayAccessTypeMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultFieldsRightWayAccessTypeMethod - 2017.10.27 at 19h 22m 04s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultFieldsRightWayAccessTypeMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultMethodRightWay - 2017.10.27 at 19h 18m 44s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWay" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultMethodRightWayAccessTypeMethod - 2017.10.27 at 19h 23m 50s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultMethodRightWayAccessTypeMethod - 2017.10.27 at 19h 24m 53s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultMethodRightWayAccessTypeMethod - 2017.10.27 at 19h 32m 11s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefaultParamsExtractorTest_extractDefaultMethodRightWayAccessTypeMethod - 2017.10.27 at 19h 33m 32s.xml">
+      <configuration name="DefaultParamsExtractorTest.extractDefaultMethodRightWayAccessTypeMethod" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84268000" />
+    <option name="totallyTimeSpent" value="91601000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -750,7 +996,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -818,171 +1064,19 @@
     <MESSAGE value="added the spel support" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="package change" />
-    <option name="LAST_COMMIT_MESSAGE" value="package change" />
+    <MESSAGE value="writer callback" />
+    <option name="LAST_COMMIT_MESSAGE" value="writer callback" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="15" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/MockStartParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#323#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="84" column="20" lean-forward="false" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/ReaderCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="54" column="47" lean-forward="false" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-core/4.1.3.RELEASE/spring-core-4.1.3.RELEASE.jar!/org/springframework/core/annotation/AnnotationUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="111" column="43" lean-forward="false" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-core/4.1.3.RELEASE/spring-core-4.1.3.RELEASE-sources.jar!/org/springframework/core/annotation/AnnotationUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/reflect/Executable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/reflect/Method.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="60" column="40" lean-forward="true" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/FieldPropertyExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/MethodPropertyExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="true" />
-            <element signature="e#10148#10149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/reflect/AccessibleObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="59" column="44" lean-forward="false" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/POJOProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="109" column="61" lean-forward="false" selection-start-line="109" selection-start-column="61" selection-end-line="109" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="298" column="26" lean-forward="false" selection-start-line="298" selection-start-column="18" selection-end-line="298" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/DFParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/ExcludeDFParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/DFBidirectionalParamAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1109,16 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StartParametersProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/config/StaticContextHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1153,14 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1267,13 +1343,216 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/POJOProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="95" column="8" lean-forward="false" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StartParametersProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1034#1064#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/PropertiesPropagator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final-sources.jar!/javax/validation/ValidatorFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/javax/validation/validation-api/2.0.0.Final/validation-api-2.0.0.Final-sources.jar!/javax/validation/Validation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/com/google/guava/guava/23.0/guava-23.0.jar!/com/google/common/cache/CacheLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="105" column="58" lean-forward="false" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5350#5351#0" expanded="true" />
+            <element signature="e#5537#5538#0" expanded="true" />
+            <element signature="e#5573#5574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/ParamsExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="88" column="21" lean-forward="false" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoAnnotatedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="99" column="47" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
+            <element signature="e#2046#2047#0" expanded="true" />
+            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#2277#2278#0" expanded="true" />
+            <element signature="e#2319#2320#0" expanded="true" />
+            <element signature="e#2390#2391#0" expanded="true" />
+            <element signature="e#2452#2453#0" expanded="true" />
+            <element signature="e#2498#2499#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2611#2612#0" expanded="true" />
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#2732#2733#0" expanded="true" />
+            <element signature="e#2783#2784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/AnnotatedParamsExtractorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/AccessType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/ParamsExtractorFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="73" lean-forward="false" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/IncludeAllDFParams.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/PojoDefaultTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="110" column="47" lean-forward="false" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="47" />
+          <folding>
+            <element signature="e#3735#3736#0" expanded="true" />
+            <element signature="e#3775#3776#0" expanded="true" />
+            <element signature="e#3861#3862#0" expanded="true" />
+            <element signature="e#3919#3920#0" expanded="true" />
+            <element signature="e#3962#3963#0" expanded="true" />
+            <element signature="e#4000#4001#0" expanded="true" />
+            <element signature="e#4083#4084#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#4179#4180#0" expanded="true" />
+            <element signature="e#4217#4218#0" expanded="true" />
+            <element signature="e#4300#4301#0" expanded="true" />
+            <element signature="e#4354#4355#0" expanded="true" />
+            <element signature="e#4409#4410#0" expanded="true" />
+            <element signature="e#4456#4457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jfeoks/newannot/pojo/update/extractor/impl/DefaultParamsExtractorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

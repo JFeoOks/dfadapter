@@ -41,6 +41,7 @@ public class POJOProcessor {
     private static final ValidatorFactory vf = Validation.buildDefaultValidatorFactory();
 
     private final static LoadingCache<Class, List<Field>> FIELDS_CACHE = buildFieldsCache(DFParam.class);
+    private final static LoadingCache<Class, List<Method>> METHODS_CACHE = buildMethodsCache(DFParam.class);
 
     public static void process(Request object) throws Exception {
         process(object, object);
@@ -59,7 +60,8 @@ public class POJOProcessor {
 //            if (request instanceof SessionAwareRequest)
 //                ((SessionAwareRequest)request).setSessionHandler(sessionHandler);
 
-        propogateProperties(response, startParameters);
+        PropertiesPropagator propertiesPropagator = new PropertiesPropagator(response, startParameters);
+        propertiesPropagator.propagate();
         return new MockSessionHandler();
     }
 
@@ -67,22 +69,6 @@ public class POJOProcessor {
         Set<ConstraintViolation<Request>> sets = vf.getValidator().validate(request);
         if (sets.size() != 0)
             throw new ConstraintViolationException("Incorrect request data passed to DataFlow POJOProcessor: " + sets, sets);
-    }
-
-    static void propogateProperties(Object target, Properties startParameters) {
-        Class reqCls = target.getClass();
-        try {
-            if (reqCls.isAnnotationPresent(DFParam.class)) {
-                Annotation classAnn = reqCls.getAnnotation(DFParam.class);
-                DFParam dfParam = (DFParam) classAnn;
-                String effectiveName = dfParam.name();
-                if (startParameters.getVariable(effectiveName) != target)
-                    target = startParameters.getVariable(effectiveName);
-            }
-
-            doWithFields(reqCls, new WriterCallback(startParameters, target));
-        } catch (Exception e) {
-        }
     }
 
     private static void doWithFields(Class<?> cls, AccessibleObjectCallback callback) throws Exception {
@@ -114,6 +100,39 @@ public class POJOProcessor {
                 return res;
             }
         });
+    }
+
+    public static LoadingCache<Class, List<Method>> buildMethodsCache(final Class<? extends Annotation> annotation) {
+        return CacheBuilder.newBuilder().build(new CacheLoader<Class, List<Method>>() {
+            @Override
+            public List<Method> load(Class cls) throws Exception {
+                List<Method> res = new ArrayList<Method>();
+                Class<?> targetClass = cls;
+
+                do {
+                    for (final Method method : targetClass.getDeclaredMethods()) {
+                        if (AnnotationUtils.findAnnotation(method, annotation) != null)
+                            res.add(method);
+                    }
+
+                    targetClass = targetClass.getSuperclass();
+                } while (targetClass != null && targetClass != Object.class);
+
+                //to avoid generation of new objects
+                if (res.isEmpty())
+                    return Collections.EMPTY_LIST;
+
+                return res;
+            }
+        });
+    }
+
+    public static LoadingCache<Class, List<Field>> getFieldsCache() {
+        return FIELDS_CACHE;
+    }
+
+    public static LoadingCache<Class, List<Method>> getMethodsCache() {
+        return METHODS_CACHE;
     }
 }
 /*

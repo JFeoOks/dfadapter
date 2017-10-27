@@ -47,8 +47,7 @@ public class StartParametersProvider {
         Class<?> beanClass = obj.getClass();
 
         if (beanClass.isAnnotationPresent(DFParam.class)) {
-            Annotation classAnn = beanClass.getAnnotation(DFParam.class);
-            DFParam dfParam = (DFParam) classAnn;
+            DFParam dfParam = beanClass.getAnnotation(DFParam.class);
             String effectiveName = dfParam.name();
             startParametersBuilder.setVariable(effectiveName, obj);
         }

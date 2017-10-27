@@ -43,7 +43,6 @@ public class WriterCallback extends AbstractCallback {
         if (value == null) return;
 
         value = convertValue(accessibleObject, value);
-
         PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propogate(target, accessibleObject, value);
     }
 
