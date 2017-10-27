@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f590d6df-9308-4f24-b7be-c36f334d5ac1" name="Default" comment="added the spel support">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ExpressionPropertySource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/POJOProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ReaderCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/StaticContextHolder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/UpdatedAdapterConfiguration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Java.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/FieldPropertyExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/FieldPropertyExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/MethodPropertyExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/MethodPropertyExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyExtractor.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyExtractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyExtractorBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyExtractorBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropagator.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropagator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/ReaderCallback.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/ReaderCallback.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DataFlowParameterAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/DataFlowParameterAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/old/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/old/AppConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/DFBiderecrtionalParamAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/annotation/DFBidirectionalParamAdapter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,7 +63,7 @@
       <file leaf-file-name="PropertyPropagator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropagator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="221">
               <caret line="28" column="64" lean-forward="true" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
               <folding />
             </state>
@@ -382,6 +368,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tutorials/hibernate-validator" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projects\Sandbox\spel_and_annot" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="jfeoks.newannot.pojo" />
     </key>
@@ -395,6 +384,116 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projects\Sandbox\spel_and_annot\src\main\java\jfeoks\newannot" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -554,7 +653,7 @@
       <updated>1508321579147</updated>
       <workItem from="1508321585277" duration="41955000" />
       <workItem from="1508841581175" duration="1088000" />
-      <workItem from="1508842956167" duration="38386000" />
+      <workItem from="1508842956167" duration="38562000" />
     </task>
     <task id="LOCAL-00001" summary="minor update">
       <created>1508485064503</created>
@@ -584,11 +683,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509091818094</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added the spel support">
+      <created>1509111856472</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1509111856472</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81429000" />
+    <option name="totallyTimeSpent" value="81605000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1099,7 +1205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropagator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="221">
           <caret line="28" column="64" lean-forward="true" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
           <folding />
         </state>
