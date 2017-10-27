@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f590d6df-9308-4f24-b7be-c36f334d5ac1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Java.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,8 +73,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -183,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/List.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/ShowPropertyPolicy.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/DFParam.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/Request.java" />
@@ -234,6 +233,7 @@
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/ReaderCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/update/WriterCallback.java" />
         <option value="$PROJECT_DIR$/src/main/java/jfeoks/newannot/pojo/nested/PropertyPropagator.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -663,7 +663,7 @@
       <updated>1508321579147</updated>
       <workItem from="1508321585277" duration="41955000" />
       <workItem from="1508841581175" duration="1088000" />
-      <workItem from="1508842956167" duration="38643000" />
+      <workItem from="1508842956167" duration="38735000" />
     </task>
     <task id="LOCAL-00001" summary="minor update">
       <created>1508485064503</created>
@@ -707,11 +707,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509112028725</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="gitignore">
+      <created>1509112109067</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1509112109067</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81686000" />
+    <option name="totallyTimeSpent" value="81778000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1223,8 +1230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
