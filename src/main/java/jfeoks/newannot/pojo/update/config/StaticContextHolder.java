@@ -1,4 +1,4 @@
-package jfeoks.newannot.pojo.update;
+package jfeoks.newannot.pojo.update.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;

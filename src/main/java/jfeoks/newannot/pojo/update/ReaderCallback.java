@@ -21,6 +21,7 @@ import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.nested.DataFlowParameterAdapter;
 import jfeoks.newannot.pojo.update.annotation.DFBidirectionalParamAdapter;
 import jfeoks.newannot.pojo.update.annotation.PropertyValue;
+import jfeoks.newannot.pojo.update.config.StaticContextHolder;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 

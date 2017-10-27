@@ -1,5 +1,7 @@
-package jfeoks.newannot.pojo.update;
+package jfeoks.newannot.pojo.update.config;
 
+import jfeoks.newannot.pojo.update.ExpressionPropertySource;
+import jfeoks.newannot.pojo.update.POJOProcessor;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
