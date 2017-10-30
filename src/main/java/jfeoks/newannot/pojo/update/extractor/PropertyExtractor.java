@@ -19,9 +19,6 @@ package jfeoks.newannot.pojo.update.extractor;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 
-/**
- * Created by egorz on 4/27/2017.
- */
 public interface PropertyExtractor<T extends AccessibleObject> {
 
     String extractName(T accessibleObject);
