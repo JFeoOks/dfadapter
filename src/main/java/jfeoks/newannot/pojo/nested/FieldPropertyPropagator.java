@@ -21,9 +21,9 @@ import java.lang.reflect.Field;
 /**
  * Created by egorz on 4/27/2017.
  */
-public class FieldPropertyPropogator implements PropertyPropagator<Field> {
+public class FieldPropertyPropagator implements PropertyPropagator<Field> {
     @Override
-    public void propogate(Object target, Field aObject, Object value) throws Exception {
+    public void propagate(Object target, Field aObject, Object value) throws Exception {
         aObject.set(target, value);
     }
 }

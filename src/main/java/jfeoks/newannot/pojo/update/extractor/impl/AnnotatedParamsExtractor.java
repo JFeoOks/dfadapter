@@ -44,11 +44,14 @@ public class AnnotatedParamsExtractor implements ParamsExtractor {
         return resultMethods;
     }
 
-    protected static boolean isSetter(Method method) {
-        return method.getParameterTypes().length == 1;
+    private static boolean isGetter(Method method) {
+        boolean isValidPrefix = method.getName().startsWith("get") || method.getName().startsWith("is");
+        boolean isHasNotParameters = method.getParameterTypes().length == 0;
+        boolean isVoid = void.class.equals(method.getReturnType());
+        return isValidPrefix && isHasNotParameters && !isVoid;
     }
 
-    protected static boolean isGetter(Method method) {
-        return method.getParameterTypes().length == 0 && !void.class.equals(method.getReturnType());
+    private static boolean isSetter(Method method) {
+        return method.getName().startsWith("set") && method.getParameterTypes().length == 1;
     }
 }

@@ -104,4 +104,16 @@ public class PojoAnnotatedTest {
     public void setMethodBigIntegerNotAnnotated(BigInteger methodBigIntegerNotAnnotated) {
         this.methodBigIntegerNotAnnotated = methodBigIntegerNotAnnotated;
     }
+
+    public Object fakeReturnMethod() {
+        return null;
+    }
+
+    public void  fakeVoidMethod() {}
+
+    public Object getFakeGetter() {
+        return null;
+    }
+
+    public void setFakeSetter() {}
 }

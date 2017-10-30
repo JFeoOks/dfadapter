@@ -2,7 +2,9 @@ package jfeoks.newannot.pojo.update.extractor.impl;
 
 import jfeoks.newannot.pojo.update.annotation.AccessType;
 import jfeoks.newannot.pojo.update.annotation.ExcludeDFParam;
+import org.springframework.beans.BeanUtils;
 
+import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -23,6 +25,10 @@ public class DefaultParamsExtractor extends AnnotatedParamsExtractor {
     public List<Field> extractFields() throws Exception {
         if (accessType == AccessType.METHOD) return super.extractFields();
 
+        return extractActualFields();
+    }
+
+    private List<Field> extractActualFields() throws Exception {
         Field[] declaredFields = beanClass.getDeclaredFields();
         List<Field> filteredFields = new ArrayList<>();
 
@@ -36,11 +42,15 @@ public class DefaultParamsExtractor extends AnnotatedParamsExtractor {
     public List<Method> extractGetMethods() throws Exception {
         if (accessType == AccessType.FIELD) return super.extractGetMethods();
 
-        Method[] declaredMethods = beanClass.getDeclaredMethods();
         List<Method> filteredMethods = new ArrayList<>();
 
-        for (Method method : declaredMethods) {
-            if (isGetter(method) && !method.isAnnotationPresent(ExcludeDFParam.class)) filteredMethods.add(method);
+        for (Field field : extractActualFields()) {
+            PropertyDescriptor propertyDescriptor = BeanUtils.getPropertyDescriptor(beanClass, field.getName());
+            if (propertyDescriptor == null) continue;
+
+            Method readMethod = propertyDescriptor.getReadMethod();
+            if (readMethod != null && !readMethod.isAnnotationPresent(ExcludeDFParam.class))
+                filteredMethods.add(readMethod);
         }
 
         return filteredMethods;
@@ -50,11 +60,15 @@ public class DefaultParamsExtractor extends AnnotatedParamsExtractor {
     public List<Method> extractSetMethods() throws Exception {
         if (accessType == AccessType.FIELD) return super.extractSetMethods();
 
-        Method[] declaredMethods = beanClass.getDeclaredMethods();
         List<Method> filteredMethods = new ArrayList<>();
 
-        for (Method method : declaredMethods) {
-            if (isSetter(method) && !method.isAnnotationPresent(ExcludeDFParam.class)) filteredMethods.add(method);
+        for (Field field : extractActualFields()) {
+            PropertyDescriptor propertyDescriptor = BeanUtils.getPropertyDescriptor(beanClass, field.getName());
+            if (propertyDescriptor == null) continue;
+
+            Method writeMethod = propertyDescriptor.getWriteMethod();
+            if (writeMethod != null && !writeMethod.isAnnotationPresent(ExcludeDFParam.class))
+                filteredMethods.add(writeMethod);
         }
 
         return filteredMethods;

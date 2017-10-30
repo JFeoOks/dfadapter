@@ -22,9 +22,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.AccessibleObject;
 
-/**
- * Created by egorz on 4/27/2017.
- */
 public class WriterCallback extends AbstractCallback {
 
     private Properties properties;
@@ -44,7 +41,7 @@ public class WriterCallback extends AbstractCallback {
         if (value == null) return;
 
         value = convertValue(accessibleObject, value);
-        PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propogate(target, accessibleObject, value);
+        PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, value);
     }
 
     private <T extends AccessibleObject> String getPropertyName(T accessibleObject) {

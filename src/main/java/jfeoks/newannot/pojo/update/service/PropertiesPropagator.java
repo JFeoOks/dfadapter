@@ -38,6 +38,7 @@ public class PropertiesPropagator {
                     paramsExtractor.extractFields(),
                     new WriterCallback(startParameters, target)
             );
+
         } catch (Exception e) {
             //TODO
         }

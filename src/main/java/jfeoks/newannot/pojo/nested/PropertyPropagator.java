@@ -22,7 +22,7 @@ import java.lang.reflect.AccessibleObject;
  * Created by egorz on 4/27/2017.
  */
 public interface PropertyPropagator<T extends AccessibleObject> {
-    void propogate(Object target, T aObject, Object value) throws Exception;
+    void propagate(Object target, T aObject, Object value) throws Exception;
 }
 /*
  WITHOUT LIMITING THE FOREGOING, COPYING, REPRODUCTION, REDISTRIBUTION,

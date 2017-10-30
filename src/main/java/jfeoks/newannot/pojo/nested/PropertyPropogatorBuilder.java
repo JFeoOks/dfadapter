@@ -25,7 +25,7 @@ import java.lang.reflect.Field;
 public class PropertyPropogatorBuilder {
     public static <T extends AccessibleObject> PropertyPropagator createPropagator(Class<T> type) {
         if (type.isAssignableFrom(Field.class))
-            return new FieldPropertyPropogator();
+            return new FieldPropertyPropagator();
         throw new UnsupportedOperationException("unsupported type for reading properties");
     }
 }
