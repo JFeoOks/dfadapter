@@ -7,7 +7,7 @@ import jfeoks.newannot.pojo.update.annotation.DFBidirectionalParamAdapter;
 import jfeoks.newannot.pojo.update.callback.pojo.PropertySourceBuilderPojo;
 import jfeoks.newannot.pojo.update.callback.pojo.ReaderAnnotatedPojo;
 import jfeoks.newannot.pojo.update.callback.pojo.ReaderAnnotatedWithDfAdapterPojo;
-import jfeoks.newannot.pojo.update.callback.pojo.TestConfiguration;
+import jfeoks.newannot.TestConfiguration;
 import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
