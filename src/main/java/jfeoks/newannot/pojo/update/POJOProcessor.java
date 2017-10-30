@@ -73,13 +73,6 @@ public class POJOProcessor {
             throw new ConstraintViolationException("Incorrect request data passed to DataFlow POJOProcessor: " + sets, sets);
     }
 
-    private static void doWithFields(Class<?> cls, AccessibleObjectCallback callback) throws Exception {
-        List<Field> fields = FIELDS_CACHE.get(cls);
-        for (Field field : fields) {
-            callback.doWith(field);
-        }
-    }
-
     public static LoadingCache<Class, List<Field>> buildFieldsCache(final Class<? extends Annotation> annotation) {
         return CacheBuilder.newBuilder().build(new CacheLoader<Class, List<Field>>() {
             @Override
