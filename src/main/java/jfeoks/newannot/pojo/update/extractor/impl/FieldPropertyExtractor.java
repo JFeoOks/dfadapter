@@ -14,7 +14,9 @@
  
 */
 
-package jfeoks.newannot.pojo.nested;
+package jfeoks.newannot.pojo.update.extractor.impl;
+
+import jfeoks.newannot.pojo.update.extractor.PropertyExtractor;
 
 import java.lang.reflect.Field;
 

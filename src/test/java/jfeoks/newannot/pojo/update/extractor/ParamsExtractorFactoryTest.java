@@ -1,9 +1,8 @@
 package jfeoks.newannot.pojo.update.extractor;
 
-import jfeoks.newannot.pojo.update.extractor.impl.AnnotatedParamsExtractor;
-import jfeoks.newannot.pojo.update.extractor.impl.DefaultParamsExtractor;
-import jfeoks.newannot.pojo.update.extractor.impl.PojoAnnotatedTest;
-import jfeoks.newannot.pojo.update.extractor.impl.PojoDefaultTest;
+import jfeoks.newannot.pojo.update.extractor.impl.*;
+import jfeoks.newannot.pojo.update.extractor.impl.pojo.PojoAnnotatedTest;
+import jfeoks.newannot.pojo.update.extractor.impl.pojo.PojoDefaultTest;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

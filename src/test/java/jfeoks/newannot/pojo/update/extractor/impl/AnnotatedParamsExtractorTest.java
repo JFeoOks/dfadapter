@@ -1,5 +1,6 @@
 package jfeoks.newannot.pojo.update.extractor.impl;
 
+import jfeoks.newannot.pojo.update.extractor.impl.pojo.PojoAnnotatedTest;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -13,9 +14,9 @@ public class AnnotatedParamsExtractorTest {
 
     @Test
     public void extractAnnotatedFieldsRightWay() throws Exception {
-        AnnotatedParamsExtractor annotatedParamsExtractor = new AnnotatedParamsExtractor();
+        AnnotatedParamsExtractor annotatedParamsExtractor = new AnnotatedParamsExtractor(PojoAnnotatedTest.class);
 
-        List<Field> fields = annotatedParamsExtractor.extractFields(PojoAnnotatedTest.class);
+        List<Field> fields = annotatedParamsExtractor.extractFields();
 
         assertEquals(fields.size(), 4);
 
@@ -23,30 +24,34 @@ public class AnnotatedParamsExtractorTest {
         assertTrue(fields.contains(PojoAnnotatedTest.class.getDeclaredField("iAnnotated")));
         assertTrue(fields.contains(PojoAnnotatedTest.class.getDeclaredField("bAnnotated")));
         assertTrue(fields.contains(PojoAnnotatedTest.class.getDeclaredField("bigIntegerAnnotated")));
-
-        assertFalse(fields.contains(PojoAnnotatedTest.class.getDeclaredField("strNotAnnotated")));
-        assertFalse(fields.contains(PojoAnnotatedTest.class.getDeclaredField("iNotAnnotated")));
-        assertFalse(fields.contains(PojoAnnotatedTest.class.getDeclaredField("bNotAnnotated")));
-        assertFalse(fields.contains(PojoAnnotatedTest.class.getDeclaredField("bigIntegerNotAnnotated")));
     }
 
     @Test
-    public void extractAnnotatedMethodRightWay() throws Exception {
-        AnnotatedParamsExtractor annotatedParamsExtractor = new AnnotatedParamsExtractor();
+    public void extractAnnotatedSetMethodRightWay() throws Exception {
+        AnnotatedParamsExtractor annotatedParamsExtractor = new AnnotatedParamsExtractor(PojoAnnotatedTest.class);
 
-        List<Method> methods = annotatedParamsExtractor.extractMethods(PojoAnnotatedTest.class);
+        List<Method> setMethods = annotatedParamsExtractor.extractSetMethods();
 
-        assertEquals(methods.size(), 4);
+        assertEquals(setMethods.size(), 4);
 
-        assertTrue(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodStr", String.class)));
-        assertTrue(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodI", Integer.class)));
-        assertTrue(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodB", boolean.class)));
-        assertTrue(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodBigInteger", BigInteger.class)));
+        assertTrue(setMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodStr", String.class)));
+        assertTrue(setMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodI", Integer.class)));
+        assertTrue(setMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodB", boolean.class)));
+        assertTrue(setMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodBigInteger", BigInteger.class)));
+    }
 
-        assertFalse(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodStrNotAnnotated", String.class)));
-        assertFalse(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodINotAnnotated", Integer.class)));
-        assertFalse(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodBNotAnnotated", boolean.class)));
-        assertFalse(methods.contains(PojoAnnotatedTest.class.getDeclaredMethod("setMethodBigIntegerNotAnnotated", BigInteger.class)));
+    @Test
+    public void extractAnnotatedGetMethodRightWay() throws Exception {
+        AnnotatedParamsExtractor annotatedParamsExtractor = new AnnotatedParamsExtractor(PojoAnnotatedTest.class);
+
+        List<Method> getMethods = annotatedParamsExtractor.extractGetMethods();
+
+        assertEquals(getMethods.size(), 4);
+
+        assertTrue(getMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("getMethodStr")));
+        assertTrue(getMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("getMethodI")));
+        assertTrue(getMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("isMethodB")));
+        assertTrue(getMethods.contains(PojoAnnotatedTest.class.getDeclaredMethod("getMethodBigInteger")));
     }
 
 

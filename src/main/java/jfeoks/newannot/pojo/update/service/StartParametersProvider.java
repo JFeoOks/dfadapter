@@ -4,7 +4,7 @@ import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.update.callback.ReaderCallback;
 import jfeoks.newannot.pojo.update.extractor.ParamsExtractor;
-import jfeoks.newannot.pojo.update.extractor.ParamsExtractorFactory;
+import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -72,12 +72,12 @@ public class StartParametersProvider {
         ParamsExtractor paramsExtractor = ParamsExtractorFactory.newInstances(requestClass);
 
         evaluateFields(
-                paramsExtractor.extractFields(requestClass),
+                paramsExtractor.extractFields(),
                 new jfeoks.newannot.pojo.update.callback.ReaderCallback(this.request, this.startParametersBuilder, false)
         );
 
         evaluateMethods(
-                paramsExtractor.extractMethods(requestClass),
+                paramsExtractor.extractGetMethods(),
                 new jfeoks.newannot.pojo.update.callback.ReaderCallback(this.request, this.startParametersBuilder, false)
         );
     }
@@ -89,12 +89,12 @@ public class StartParametersProvider {
         ParamsExtractor paramsExtractor = ParamsExtractorFactory.newInstances(responseClass);
 
         evaluateFields(
-                paramsExtractor.extractFields(responseClass),
+                paramsExtractor.extractFields(),
                 new jfeoks.newannot.pojo.update.callback.ReaderCallback(this.request, this.startParametersBuilder, true)
         );
 
         evaluateMethods(
-                paramsExtractor.extractMethods(responseClass),
+                paramsExtractor.extractGetMethods(),
                 new ReaderCallback(this.request, this.startParametersBuilder, true)
         );
     }

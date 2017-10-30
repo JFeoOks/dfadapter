@@ -14,27 +14,19 @@
  
 */
 
-package jfeoks.newannot.pojo.nested;
+package jfeoks.newannot.pojo.update.extractor;
 
+import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 /**
  * Created by egorz on 4/27/2017.
  */
-public class MethodPropertyExtractor implements PropertyExtractor<Method> {
+public interface PropertyExtractor<T extends AccessibleObject> {
 
-    @Override
-    public String extractName(Method method) {
-        return method.getName();
-    }
+    String extractName(T accessibleObject);
 
-    @Override
-    public <R> R extractValue(Method method, Object source) throws Exception {
-        if (method.getParameterTypes().length > 0)
-            throw new UnsupportedOperationException("can't get value from the method with arguments");
-        return (R) method.invoke(source);
-    }
+    <R> R extractValue(T accessibleObject, Object source) throws Exception;
 }
 /*
  WITHOUT LIMITING THE FOREGOING, COPYING, REPRODUCTION, REDISTRIBUTION,

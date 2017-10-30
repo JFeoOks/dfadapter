@@ -18,6 +18,7 @@ package jfeoks.newannot.pojo.update.callback;
 
 
 import jfeoks.newannot.pojo.nested.*;
+import jfeoks.newannot.pojo.update.extractor.PropertyExtractor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 

@@ -10,15 +10,18 @@ import java.util.List;
 
 public class DefaultParamsExtractor extends AnnotatedParamsExtractor {
 
+    private Class<?> beanClass;
     private AccessType accessType;
 
-    public DefaultParamsExtractor(AccessType accessType) {
+    protected DefaultParamsExtractor(Class<?> beanClass, AccessType accessType) {
+        super(beanClass);
+        this.beanClass = beanClass;
         this.accessType = accessType;
     }
 
     @Override
-    public List<Field> extractFields(Class<?> beanClass) throws Exception {
-        if (accessType == AccessType.METHOD) return super.extractFields(beanClass);
+    public List<Field> extractFields() throws Exception {
+        if (accessType == AccessType.METHOD) return super.extractFields();
 
         Field[] declaredFields = beanClass.getDeclaredFields();
         List<Field> filteredFields = new ArrayList<>();
@@ -30,8 +33,22 @@ public class DefaultParamsExtractor extends AnnotatedParamsExtractor {
     }
 
     @Override
-    public List<Method> extractMethods(Class<?> beanClass) throws Exception {
-        if (accessType == AccessType.FIELD) return super.extractMethods(beanClass);
+    public List<Method> extractGetMethods() throws Exception {
+        if (accessType == AccessType.FIELD) return super.extractGetMethods();
+
+        Method[] declaredMethods = beanClass.getDeclaredMethods();
+        List<Method> filteredMethods = new ArrayList<>();
+
+        for (Method method : declaredMethods) {
+            if (isGetter(method) && !method.isAnnotationPresent(ExcludeDFParam.class)) filteredMethods.add(method);
+        }
+
+        return filteredMethods;
+    }
+
+    @Override
+    public List<Method> extractSetMethods() throws Exception {
+        if (accessType == AccessType.FIELD) return super.extractSetMethods();
 
         Method[] declaredMethods = beanClass.getDeclaredMethods();
         List<Method> filteredMethods = new ArrayList<>();
@@ -41,11 +58,5 @@ public class DefaultParamsExtractor extends AnnotatedParamsExtractor {
         }
 
         return filteredMethods;
-    }
-
-    private static boolean isSetter(Method method){
-        if(!method.getName().startsWith("set")) return false;
-        if(method.getParameterTypes().length != 1) return false;
-        return true;
     }
 }

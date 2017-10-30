@@ -1,6 +1,7 @@
 package jfeoks.newannot.pojo.update.extractor.impl;
 
 import jfeoks.newannot.pojo.update.annotation.AccessType;
+import jfeoks.newannot.pojo.update.extractor.impl.pojo.PojoDefaultTest;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -15,9 +16,9 @@ public class DefaultParamsExtractorTest {
 
     @Test
     public void extractDefaultFieldsRightWayAccessTypeField() throws Exception {
-        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(AccessType.FIELD);
+        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.FIELD);
 
-        List<Field> fields = defaultParamsExtractor.extractFields(PojoDefaultTest.class);
+        List<Field> fields = defaultParamsExtractor.extractFields();
 
         assertEquals(fields.size(), 20);
 
@@ -49,24 +50,38 @@ public class DefaultParamsExtractorTest {
     }
 
     @Test
-    public void extractDefaultMethodRightWayAccessTypeField() throws Exception {
-        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(AccessType.FIELD);
+    public void extractDefaultSetMethodRightWayAccessTypeField() throws Exception {
+        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.FIELD);
 
-        List<Method> methods = defaultParamsExtractor.extractMethods(PojoDefaultTest.class);
+        List<Method> setMethods = defaultParamsExtractor.extractSetMethods();
+        System.out.println(setMethods);
+        assertEquals(setMethods.size(), 4);
 
-        assertEquals(methods.size(), 4);
+        assertTrue(setMethods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodStr", String.class)));
+        assertTrue(setMethods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodI", Integer.class)));
+        assertTrue(setMethods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodB", boolean.class)));
+        assertTrue(setMethods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodBigInteger", BigInteger.class)));
+    }
 
-        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodStr", String.class)));
-        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodI", Integer.class)));
-        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodB", boolean.class)));
-        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodBigInteger", BigInteger.class)));
+    @Test
+    public void extractDefaultGetMethodRightWayAccessTypeField() throws Exception {
+        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.FIELD);
+
+        List<Method> getMethods = defaultParamsExtractor.extractGetMethods();
+
+        assertEquals(getMethods.size(), 4);
+
+        assertTrue(getMethods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodStr")));
+        assertTrue(getMethods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodI")));
+        assertTrue(getMethods.contains(PojoDefaultTest.class.getDeclaredMethod("isMethodB")));
+        assertTrue(getMethods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodBigInteger")));
     }
 
     @Test
     public void extractDefaultFieldsRightWayAccessTypeMethod() throws Exception {
-        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(AccessType.METHOD);
+        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.METHOD);
 
-        List<Field> fields = defaultParamsExtractor.extractFields(PojoDefaultTest.class);
+        List<Field> fields = defaultParamsExtractor.extractFields();
 
         assertEquals(fields.size(), 4);
 
@@ -77,10 +92,11 @@ public class DefaultParamsExtractorTest {
     }
 
     @Test
-    public void extractDefaultMethodRightWayAccessTypeMethod() throws Exception {
-        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(AccessType.METHOD);
+    public void extractDefaultSetMethodRightWayAccessTypeMethod() throws Exception {
+        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.METHOD);
 
-        List<Method> methods = defaultParamsExtractor.extractMethods(PojoDefaultTest.class);
+        List<Method> methods = defaultParamsExtractor.extractSetMethods();
+
         assertEquals(methods.size(), 8);
 
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodStr", String.class)));
@@ -92,5 +108,24 @@ public class DefaultParamsExtractorTest {
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodINotAnnotated", Integer.class)));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodBNotAnnotated", boolean.class)));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodBigIntegerNotAnnotated", BigInteger.class)));
+    }
+
+    @Test
+    public void extractDefaultGetMethodRightWayAccessTypeMethod() throws Exception {
+        DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.METHOD);
+
+        List<Method> methods = defaultParamsExtractor.extractGetMethods();
+
+        assertEquals(methods.size(), 8);
+
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodStr")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodI")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("isMethodB")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodBigInteger")));
+
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodStrNotAnnotated")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodINotAnnotated")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("isMethodBNotAnnotated")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodBigIntegerNotAnnotated")));
     }
 }

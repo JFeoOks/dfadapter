@@ -16,6 +16,10 @@
 
 package jfeoks.newannot.pojo.nested;
 
+import jfeoks.newannot.pojo.update.extractor.impl.FieldPropertyExtractor;
+import jfeoks.newannot.pojo.update.extractor.impl.MethodPropertyExtractor;
+import jfeoks.newannot.pojo.update.extractor.PropertyExtractor;
+
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

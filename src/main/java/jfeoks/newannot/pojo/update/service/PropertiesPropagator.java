@@ -5,7 +5,7 @@ import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.Properties;
 import jfeoks.newannot.pojo.update.callback.WriterCallback;
 import jfeoks.newannot.pojo.update.extractor.ParamsExtractor;
-import jfeoks.newannot.pojo.update.extractor.ParamsExtractorFactory;
+import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -35,7 +35,7 @@ public class PropertiesPropagator {
 
         try {
             evaluateFields(
-                    paramsExtractor.extractFields(beanClass),
+                    paramsExtractor.extractFields(),
                     new WriterCallback(startParameters, target)
             );
         } catch (Exception e) {
