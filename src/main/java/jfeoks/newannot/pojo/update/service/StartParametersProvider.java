@@ -73,12 +73,12 @@ public class StartParametersProvider {
 
         evaluateFields(
                 paramsExtractor.extractFields(),
-                new jfeoks.newannot.pojo.update.callback.ReaderCallback(this.request, this.startParametersBuilder, false)
+                new ReaderCallback(this.request, this.startParametersBuilder, false)
         );
 
         evaluateMethods(
                 paramsExtractor.extractGetMethods(),
-                new jfeoks.newannot.pojo.update.callback.ReaderCallback(this.request, this.startParametersBuilder, false)
+                new ReaderCallback(this.request, this.startParametersBuilder, false)
         );
     }
 
@@ -90,7 +90,7 @@ public class StartParametersProvider {
 
         evaluateFields(
                 paramsExtractor.extractFields(),
-                new jfeoks.newannot.pojo.update.callback.ReaderCallback(this.request, this.startParametersBuilder, true)
+                new ReaderCallback(this.request, this.startParametersBuilder, true)
         );
 
         evaluateMethods(
