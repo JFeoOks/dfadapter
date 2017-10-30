@@ -1,8 +1,9 @@
-package jfeoks.newannot.pojo.update;
+package jfeoks.newannot.pojo.update.service;
 
 import jfeoks.newannot.pojo.nested.AccessibleObjectCallback;
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.Properties;
+import jfeoks.newannot.pojo.update.callback.WriterCallback;
 import jfeoks.newannot.pojo.update.extractor.ParamsExtractor;
 import jfeoks.newannot.pojo.update.extractor.ParamsExtractorFactory;
 

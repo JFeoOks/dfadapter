@@ -14,7 +14,7 @@
  
 */
 
-package jfeoks.newannot.pojo.update;
+package jfeoks.newannot.pojo.update.callback;
 
 
 import jfeoks.newannot.pojo.nested.*;
