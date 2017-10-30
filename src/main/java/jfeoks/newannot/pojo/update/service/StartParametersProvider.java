@@ -94,9 +94,33 @@ public class StartParametersProvider {
         );
 
         evaluateMethods(
-                paramsExtractor.extractGetMethods(),
+                paramsExtractor.extractSetMethods(),
                 new ReaderCallback(this.request, this.startParametersBuilder, true)
         );
+    }
+
+    public Object getRequest() {
+        return request;
+    }
+
+    public void setRequest(Object request) {
+        this.request = request;
+    }
+
+    public Object getResponse() {
+        return response;
+    }
+
+    public void setResponse(Object response) {
+        this.response = response;
+    }
+
+    public MockStartParametersBuilder getStartParametersBuilder() {
+        return startParametersBuilder;
+    }
+
+    public void setStartParametersBuilder(MockStartParametersBuilder startParametersBuilder) {
+        this.startParametersBuilder = startParametersBuilder;
     }
 }
 
