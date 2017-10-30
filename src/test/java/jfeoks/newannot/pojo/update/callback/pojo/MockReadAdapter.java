@@ -7,6 +7,6 @@ public class MockReadAdapter implements DataFlowParameterAdapter<String, String>
 
     @Override
     public String convert(String source, ExpressionPropertySource propertySource) {
-        return "Read string = " + source;
+        return "Read string = " + source + "; property source string = " + propertySource.get("hello");
     }
 }

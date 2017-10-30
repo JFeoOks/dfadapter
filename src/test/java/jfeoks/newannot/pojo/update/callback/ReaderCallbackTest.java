@@ -8,7 +8,6 @@ import jfeoks.newannot.pojo.update.callback.pojo.PropertySourceBuilderPojo;
 import jfeoks.newannot.pojo.update.callback.pojo.ReaderAnnotatedPojo;
 import jfeoks.newannot.pojo.update.callback.pojo.ReaderAnnotatedWithDfAdapterPojo;
 import jfeoks.newannot.pojo.update.callback.pojo.TestConfiguration;
-import jfeoks.newannot.pojo.update.config.UpdatedAdapterConfiguration;
 import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -92,10 +91,26 @@ public class ReaderCallbackTest {
         assertTrue(expressionPropertySource.get("bean test") instanceof PropertySourceBuilderPojo);
     }
 
-//    @Test
+    @Test
     public void checkAnnotatedFieldWithAdapterRightWay() throws Exception {
-        ReaderAnnotatedWithDfAdapterPojo readerAnnotatedPojo = new ReaderAnnotatedWithDfAdapterPojo();
+        ReaderAnnotatedWithDfAdapterPojo readerPojo = new ReaderAnnotatedWithDfAdapterPojo();
+        MockStartParametersBuilder builder = new MockStartParametersBuilder();
 
+        ReaderCallback readerCallback = new ReaderCallback(
+                readerPojo,
+                builder,
+                false
+        );
+
+        Field annotatedString = readerPojo.getClass().getDeclaredField("annotatedString");
+        annotatedString.setAccessible(true);
+
+        readerCallback.doWith(annotatedString);
+
+        assertEquals(builder.getPropertyName(), "testAnnotatedString");
+        assertEquals(builder.getValue(), "Read string = annotated string; property source string = Hello World!");
+        assertEquals(builder.getShowPropertyPolicy(), ShowPropertyPolicy.SHOW);
+        assertFalse(builder.isMdcAware());
     }
 
 }
