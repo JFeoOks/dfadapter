@@ -1,4 +1,4 @@
-package jfeoks.newannot.pojo.update.service;
+package jfeoks.newannot.pojo.update.provider;
 
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.*;

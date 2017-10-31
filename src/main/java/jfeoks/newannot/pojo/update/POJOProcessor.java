@@ -19,8 +19,8 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import jfeoks.newannot.pojo.nested.*;
-import jfeoks.newannot.pojo.update.service.PropertiesPropagationProvider;
-import jfeoks.newannot.pojo.update.service.StartParametersProvider;
+import jfeoks.newannot.pojo.update.provider.PropertiesPropagationProvider;
+import jfeoks.newannot.pojo.update.provider.StartParametersProvider;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import javax.validation.ConstraintViolation;
