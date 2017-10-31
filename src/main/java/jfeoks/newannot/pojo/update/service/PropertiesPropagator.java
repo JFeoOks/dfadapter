@@ -39,7 +39,7 @@ public class PropertiesPropagator {
                     new WriterCallback(startParameters, target)
             );
 
-            //TODO добавить поддержку setter'ov
+            //TODO добавить поддержку setter'ov.
         } catch (Exception e) {
             //TODO
         }
