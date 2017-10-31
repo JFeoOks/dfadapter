@@ -1,10 +1,10 @@
-package jfeoks.newannot.pojo.update.callback;
+package jfeoks.newannot.pojo.update.callback.impl;
 
-import jfeoks.newannot.pojo.nested.AccessibleObjectCallback;
 import jfeoks.newannot.pojo.nested.DFParamAdapter;
 import jfeoks.newannot.pojo.update.ExpressionPropertySource;
 import jfeoks.newannot.pojo.update.annotation.DFBidirectionalParamAdapter;
 import jfeoks.newannot.pojo.update.annotation.PropertyValue;
+import jfeoks.newannot.pojo.update.callback.AccessibleObjectCallback;
 import jfeoks.newannot.pojo.update.config.StaticContextHolder;
 
 import java.lang.reflect.AccessibleObject;
@@ -12,7 +12,7 @@ import java.lang.reflect.AccessibleObject;
 public abstract class AbstractCallback implements AccessibleObjectCallback {
 
     @SuppressWarnings("unchecked")
-    protected  <T extends AccessibleObject> Object convertValue(T accessibleObject, Object value) throws IllegalAccessException, InstantiationException {
+    public  <T extends AccessibleObject> Object convertValue(T accessibleObject, Object value) throws IllegalAccessException, InstantiationException {
         if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {
             Class<? extends jfeoks.newannot.pojo.nested.DataFlowParameterAdapter> aClass = accessibleObject.getAnnotation(DFParamAdapter.class).adapterClass();
 
@@ -31,7 +31,7 @@ public abstract class AbstractCallback implements AccessibleObjectCallback {
         return value;
     }
 
-    protected ExpressionPropertySource buildPropertySource(PropertyValue[] propertyValues) {
+    public ExpressionPropertySource buildPropertySource(PropertyValue[] propertyValues) {
         //TODO It's not a good solution
         ExpressionPropertySource expressionPropertySource = StaticContextHolder.getBean(ExpressionPropertySource.class);
 

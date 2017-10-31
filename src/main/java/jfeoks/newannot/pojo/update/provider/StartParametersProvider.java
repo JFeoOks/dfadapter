@@ -2,7 +2,7 @@ package jfeoks.newannot.pojo.update.provider;
 
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.*;
-import jfeoks.newannot.pojo.update.callback.ReaderCallback;
+import jfeoks.newannot.pojo.update.callback.impl.ReaderCallback;
 
 public class StartParametersProvider extends AbstractProvider {
 

@@ -14,49 +14,66 @@
  
 */
 
-package jfeoks.newannot.pojo.update.callback;
+package jfeoks.newannot.pojo.update.callback.impl;
+
 
 import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.update.extractor.PropertyExtractor;
-import jfeoks.newannot.pojo.update.propagator.impl.PropertyPropagatorBuilder;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.reflect.AccessibleObject;
 
-public class WriterCallback extends AbstractCallback {
+public class ReaderCallback extends AbstractCallback {
 
-    private Properties properties;
-    private Object target;
+    private static ShowPropertyPolicy DEFAULT_SHOW_PROPERTY_POLICY = ShowPropertyPolicy.SHOW;
 
-    public WriterCallback(Properties properties, Object target) {
-        this.properties = properties;
-        this.target = target;
+    private Object instance;
+    private MockStartParametersBuilder builder;
+    private boolean declareOnly;
+
+    public ReaderCallback(Object instance, MockStartParametersBuilder builder, boolean declareOnly) {
+        this.instance = instance;
+        this.builder = builder;
+        this.declareOnly = declareOnly;
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public <T extends AccessibleObject> void doWith(T accessibleObject) throws Exception {
-        String propertyName = getPropertyName(accessibleObject);
-        Object value = properties.getVariable(propertyName);
+        String propertyName;
+        ShowPropertyPolicy showPropertyPolicy;
+        boolean mdcAware = false;
 
-        if (value == null) return;
-
-        value = convertValue(accessibleObject, value);
-        PropertyPropagatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, value);
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T extends AccessibleObject> String getPropertyName(T accessibleObject) {
-        DFParam dfParam = accessibleObject.getAnnotation(DFParam.class);
+        DFParam dfParam = AnnotationUtils.getAnnotation(accessibleObject, DFParam.class);
         PropertyExtractor propertyExtractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
 
-        String name = null;
-        if (dfParam != null) name = dfParam.name();
+        if (dfParam != null) {
+            propertyName = StringUtils.defaultIfEmpty(dfParam.name(), propertyExtractor.extractName(accessibleObject));
+            showPropertyPolicy = dfParam.showPropertyPolicy();
+            mdcAware = dfParam.mdcAware();
+        } else {
+            propertyName = propertyExtractor.extractName(accessibleObject);
+            showPropertyPolicy = DEFAULT_SHOW_PROPERTY_POLICY;
+        }
 
-        return StringUtils.defaultIfEmpty(name, propertyExtractor.extractName(accessibleObject));
+        accessibleObject.setAccessible(true);
+        Object value = propertyExtractor.extractValue(accessibleObject, instance);
+
+        if (value == null || declareOnly)
+            builder.declareVariable(propertyName, mdcAware);
+        else {
+            try {
+                value = convertValue(accessibleObject, value);
+            } catch (InstantiationException ie) {
+//            ExceptionUtils.<RuntimeException>castAndThrow(ie);
+            }
+
+            builder.setVariable(propertyName, value, mdcAware);
+        }
+
+        builder.setShowPropertyPolicy(propertyName, showPropertyPolicy);
     }
-
-
 }
 /*
  WITHOUT LIMITING THE FOREGOING, COPYING, REPRODUCTION, REDISTRIBUTION,

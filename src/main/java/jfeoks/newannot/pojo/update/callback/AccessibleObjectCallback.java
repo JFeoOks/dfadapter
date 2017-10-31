@@ -14,7 +14,7 @@
  
 */
 
-package jfeoks.newannot.pojo.nested;
+package jfeoks.newannot.pojo.update.callback;
 
 import java.lang.reflect.AccessibleObject;
 

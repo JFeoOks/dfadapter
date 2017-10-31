@@ -2,7 +2,7 @@ package jfeoks.newannot.pojo.update.provider;
 
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.Properties;
-import jfeoks.newannot.pojo.update.callback.WriterCallback;
+import jfeoks.newannot.pojo.update.callback.impl.WriterCallback;
 
 public class PropertiesPropagationProvider extends AbstractProvider {
 

@@ -16,6 +16,7 @@
 
 package jfeoks.newannot.pojo.nested;
 
+import jfeoks.newannot.pojo.update.callback.AccessibleObjectCallback;
 import jfeoks.newannot.pojo.update.propagator.impl.PropertyPropagatorBuilder;
 import org.apache.commons.lang3.StringUtils;
 

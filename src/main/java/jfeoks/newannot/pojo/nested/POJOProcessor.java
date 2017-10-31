@@ -18,6 +18,7 @@ package jfeoks.newannot.pojo.nested;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import jfeoks.newannot.pojo.update.callback.AccessibleObjectCallback;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import javax.validation.ConstraintViolation;
