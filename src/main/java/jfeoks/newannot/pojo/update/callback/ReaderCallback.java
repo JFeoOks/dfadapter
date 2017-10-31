@@ -49,7 +49,7 @@ public class ReaderCallback extends AbstractCallback {
         PropertyExtractor propertyExtractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
 
         if (dfParam != null) {
-            propertyName = StringUtils.defaultIfBlank(dfParam.name(), propertyExtractor.extractName(accessibleObject));
+            propertyName = StringUtils.defaultIfEmpty(dfParam.name(), propertyExtractor.extractName(accessibleObject));
             showPropertyPolicy = dfParam.showPropertyPolicy();
             mdcAware = dfParam.mdcAware();
         } else {

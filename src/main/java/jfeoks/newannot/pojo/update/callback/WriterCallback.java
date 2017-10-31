@@ -44,15 +44,15 @@ public class WriterCallback extends AbstractCallback {
         PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, value);
     }
 
+    @SuppressWarnings("unchecked")
     private <T extends AccessibleObject> String getPropertyName(T accessibleObject) {
         DFParam dfParam = accessibleObject.getAnnotation(DFParam.class);
-        PropertyExtractor extractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
+        PropertyExtractor propertyExtractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
 
         String name = null;
         if (dfParam != null) name = dfParam.name();
 
-        return StringUtils.defaultIfEmpty(name, extractor.extractName(accessibleObject));
-
+        return StringUtils.defaultIfEmpty(name, propertyExtractor.extractName(accessibleObject));
     }
 
 
