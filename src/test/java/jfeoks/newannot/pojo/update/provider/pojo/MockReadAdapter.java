@@ -1,4 +1,4 @@
-package jfeoks.newannot.pojo.update.callback.pojo;
+package jfeoks.newannot.pojo.update.provider.pojo;
 
 import jfeoks.newannot.pojo.update.DataFlowParameterAdapter;
 import jfeoks.newannot.pojo.update.ExpressionPropertySource;

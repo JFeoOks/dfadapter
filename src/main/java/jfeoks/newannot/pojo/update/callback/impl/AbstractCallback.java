@@ -12,7 +12,7 @@ import java.lang.reflect.AccessibleObject;
 public abstract class AbstractCallback implements AccessibleObjectCallback {
 
     @SuppressWarnings("unchecked")
-    public  <T extends AccessibleObject> Object convertValue(T accessibleObject, Object value) throws IllegalAccessException, InstantiationException {
+    public  <T extends AccessibleObject> Object convertValueForRead(T accessibleObject, Object value) throws IllegalAccessException, InstantiationException {
         if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {
             Class<? extends jfeoks.newannot.pojo.nested.DataFlowParameterAdapter> aClass = accessibleObject.getAnnotation(DFParamAdapter.class).adapterClass();
 
@@ -21,6 +21,25 @@ public abstract class AbstractCallback implements AccessibleObjectCallback {
         } else if (accessibleObject.isAnnotationPresent(DFBidirectionalParamAdapter.class)) {
             DFBidirectionalParamAdapter adapter = accessibleObject.getAnnotation(DFBidirectionalParamAdapter.class);
             Class<? extends jfeoks.newannot.pojo.update.DataFlowParameterAdapter> aClass = adapter.readAdapterClass();
+
+            jfeoks.newannot.pojo.update.DataFlowParameterAdapter converter = aClass.newInstance();
+            ExpressionPropertySource properties = buildPropertySource(adapter.propertyValues());
+
+            return converter.convert(value, properties);
+        }
+
+        return value;
+    }
+
+    public  <T extends AccessibleObject> Object convertValueForWrite(T accessibleObject, Object value) throws IllegalAccessException, InstantiationException {
+        if (accessibleObject.isAnnotationPresent(DFParamAdapter.class)) {
+            Class<? extends jfeoks.newannot.pojo.nested.DataFlowParameterAdapter> aClass = accessibleObject.getAnnotation(DFParamAdapter.class).adapterClass();
+
+            jfeoks.newannot.pojo.nested.DataFlowParameterAdapter converter = aClass.newInstance();
+            return converter.convert(value);
+        } else if (accessibleObject.isAnnotationPresent(DFBidirectionalParamAdapter.class)) {
+            DFBidirectionalParamAdapter adapter = accessibleObject.getAnnotation(DFBidirectionalParamAdapter.class);
+            Class<? extends jfeoks.newannot.pojo.update.DataFlowParameterAdapter> aClass = adapter.writeAdapterClass();
 
             jfeoks.newannot.pojo.update.DataFlowParameterAdapter converter = aClass.newInstance();
             ExpressionPropertySource properties = buildPropertySource(adapter.propertyValues());

@@ -4,6 +4,8 @@ import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.ShowPropertyPolicy;
 import jfeoks.newannot.pojo.update.annotation.DFBidirectionalParamAdapter;
 import jfeoks.newannot.pojo.update.annotation.PropertyValue;
+import jfeoks.newannot.pojo.update.provider.pojo.MockReadAdapter;
+import jfeoks.newannot.pojo.update.provider.pojo.MockWriterAdapter;
 
 import java.math.BigInteger;
 

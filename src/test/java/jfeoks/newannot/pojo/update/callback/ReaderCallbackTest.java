@@ -2,6 +2,7 @@ package jfeoks.newannot.pojo.update.callback;
 
 import jfeoks.newannot.pojo.nested.MockStartParametersBuilder;
 import jfeoks.newannot.pojo.nested.ShowPropertyPolicy;
+import jfeoks.newannot.pojo.nested.ValueHolder;
 import jfeoks.newannot.pojo.update.ExpressionPropertySource;
 import jfeoks.newannot.pojo.update.annotation.DFBidirectionalParamAdapter;
 import jfeoks.newannot.pojo.update.callback.impl.ReaderCallback;
@@ -39,10 +40,11 @@ public class ReaderCallbackTest {
         Field annotatedString = ParamsExtractorFactory.newInstances(readerAnnotatedPojo.getClass()).extractFields().get(0);
         readerCallback.doWith(annotatedString);
 
-        assertEquals(builder.getPropertyName(), "testAnnotatedString");
-        assertEquals(builder.getValue(), "annotated string");
-        assertEquals(builder.getShowPropertyPolicy(), ShowPropertyPolicy.SHOW);
-        assertFalse(builder.isMdcAware());
+        ValueHolder valueHolder = builder.getProperties().get("testAnnotatedString");
+        assertEquals(valueHolder.getPropertyName(), "testAnnotatedString");
+        assertEquals(valueHolder.getValue(), "annotated string");
+        assertEquals(valueHolder.getShowPropertyPolicy(), ShowPropertyPolicy.SHOW);
+        assertFalse(valueHolder.isMdcAware());
     }
 
     @Test
@@ -61,10 +63,11 @@ public class ReaderCallbackTest {
 
         readerCallback.doWith(annotatedMethod);
 
-        assertEquals(builder.getPropertyName(), "testGetAnnotatedMethodFieldBigInteger");
-        assertNull(builder.getValue());
-        assertEquals(builder.getShowPropertyPolicy(), ShowPropertyPolicy.MASK);
-        assertTrue(builder.isMdcAware());
+        ValueHolder valueHolder = builder.getProperties().get("testGetAnnotatedMethodFieldBigInteger");
+        assertEquals(valueHolder.getPropertyName(), "testGetAnnotatedMethodFieldBigInteger");
+        assertNull(valueHolder.getValue());
+        assertEquals(valueHolder.getShowPropertyPolicy(), ShowPropertyPolicy.MASK);
+        assertTrue(valueHolder.isMdcAware());
     }
 
     @Test
@@ -108,10 +111,11 @@ public class ReaderCallbackTest {
 
         readerCallback.doWith(annotatedString);
 
-        assertEquals(builder.getPropertyName(), "testAnnotatedString");
-        assertEquals(builder.getValue(), "Read string = annotated string; property source string = Hello World!");
-        assertEquals(builder.getShowPropertyPolicy(), ShowPropertyPolicy.SHOW);
-        assertFalse(builder.isMdcAware());
+        ValueHolder valueHolder = builder.getProperties().get("testAnnotatedString");
+        assertEquals(valueHolder.getPropertyName(), "testAnnotatedString");
+        assertEquals(valueHolder.getValue(), "Read string = annotated string; property source string = Hello World!");
+        assertEquals(valueHolder.getShowPropertyPolicy(), ShowPropertyPolicy.SHOW);
+        assertFalse(valueHolder.isMdcAware());
     }
 
 }
