@@ -4,7 +4,9 @@ import jfeoks.newannot.TestConfiguration;
 import jfeoks.newannot.pojo.nested.MockStartParametersBuilder;
 import jfeoks.newannot.pojo.nested.ValueHolder;
 import jfeoks.newannot.pojo.update.provider.pojo.RequestAnnotatedTestPojo;
+import jfeoks.newannot.pojo.update.provider.pojo.RequestDefaultTestPojo;
 import jfeoks.newannot.pojo.update.provider.pojo.ResponseAnnotatedTestPojo;
+import jfeoks.newannot.pojo.update.provider.pojo.ResponseDefaultTestPojo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -52,17 +54,34 @@ public class StartParametersProviderTest {
     }
 
     @Test
-    public void buildStartParametersWithDefaultRequestAndDefaultResponseRightWay() throws Exception {
+    public void buildStartParametersWithDefaultRequestAndDefaultResponseAccessTypeFieldRightWay() throws Exception {
         MockStartParametersBuilder startParametersBuilder = new MockStartParametersBuilder();
         StartParametersProvider startParametersProvider =
                 new StartParametersProvider(
-                        new RequestAnnotatedTestPojo(),
-                        new ResponseAnnotatedTestPojo(),
+                        new RequestDefaultTestPojo(),
+                        new ResponseDefaultTestPojo(),
                         startParametersBuilder
                 );
 
         startParametersProvider.buildStartParameters();
 
+        assertEquals(startParametersBuilder.getProperties().size(), 4);
+
+        ValueHolder annotatedHelloField = startParametersBuilder.getProperties().get("annotated_hello_field");
+        assertNotNull(annotatedHelloField);
+        assertEquals(annotatedHelloField.getValue(), "Read string = Holly field; property source string = Hello World!");
+
+        ValueHolder annotatedByeField = startParametersBuilder.getProperties().get("annotatedByeStringField");
+        assertNotNull(annotatedByeField);
+        assertEquals(annotatedByeField.getValue(), "Read string = Holly field; property source string = Bye World!");
+
+        ValueHolder includedString = startParametersBuilder.getProperties().get("includedString");
+        assertNotNull(includedString);
+        assertEquals(includedString.getValue(), "Included field");
+
+        ValueHolder annotatedOverridedStringMethod = startParametersBuilder.getProperties().get("annotated_overrided_string_method");
+        assertNotNull(annotatedOverridedStringMethod);
+        assertEquals(annotatedOverridedStringMethod.getValue(), "Read string = Holly method; property source string = Hello Overrided World!");
 
     }
 }

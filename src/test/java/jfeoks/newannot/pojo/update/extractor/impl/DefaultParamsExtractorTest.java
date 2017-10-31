@@ -19,8 +19,7 @@ public class DefaultParamsExtractorTest {
         DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.FIELD);
 
         List<Field> fields = defaultParamsExtractor.extractFields();
-
-        assertEquals(fields.size(), 20);
+        assertEquals(fields.size(), 16);
 
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("strAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("iAnnotated")));
@@ -31,12 +30,13 @@ public class DefaultParamsExtractorTest {
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("iNotAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("bNotAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("bigIntegerNotAnnotated")));
-
+/*
+        Не будут, так как getter помечен DFParam
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodStr")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodI")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodB")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodBigInteger")));
-
+*/
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodStrNotAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodINotAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodBNotAnnotated")));
@@ -54,7 +54,6 @@ public class DefaultParamsExtractorTest {
         DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.FIELD);
 
         List<Method> setMethods = defaultParamsExtractor.extractSetMethods();
-        System.out.println(setMethods);
         assertEquals(setMethods.size(), 4);
 
         assertTrue(setMethods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodStr", String.class)));
