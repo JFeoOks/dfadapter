@@ -73,4 +73,14 @@ public class ValueHolder {
     public void setMdcAware(boolean mdcAware) {
         this.mdcAware = mdcAware;
     }
+
+    @Override
+    public String toString() {
+        return "ValueHolder{" +
+                "propertyName='" + propertyName + '\'' +
+                ", value=" + value +
+                ", showPropertyPolicy=" + showPropertyPolicy +
+                ", mdcAware=" + mdcAware +
+                '}';
+    }
 }

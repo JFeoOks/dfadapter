@@ -3,6 +3,12 @@ package jfeoks.newannot.pojo.update.provider;
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.update.callback.impl.ReaderCallback;
+import jfeoks.newannot.pojo.update.extractor.ParamsExtractor;
+import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
+
+import java.lang.reflect.AccessibleObject;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StartParametersProvider extends AbstractProvider {
 
@@ -63,8 +69,18 @@ public class StartParametersProvider extends AbstractProvider {
 
         evaluateAccessibleObjects(
                 extractAccessibleObjects(responseClass),
-                new ReaderCallback(this.request, this.startParametersBuilder, false)
+                new ReaderCallback(this.response, this.startParametersBuilder, true)
         );
+    }
+
+    private List<AccessibleObject> extractAccessibleObjects(Class<?> beanClass) throws Exception {
+        ParamsExtractor paramsExtractor = ParamsExtractorFactory.newInstances(beanClass);
+        List<AccessibleObject> accessibleObjects = new ArrayList<>();
+
+        accessibleObjects.addAll(paramsExtractor.extractFields());
+        accessibleObjects.addAll(paramsExtractor.extractGetMethods());
+
+        return accessibleObjects;
     }
 
     public Object getRequest() {
