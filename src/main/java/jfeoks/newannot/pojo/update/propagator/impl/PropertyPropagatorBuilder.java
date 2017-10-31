@@ -14,18 +14,24 @@
  
 */
 
-package jfeoks.newannot.pojo.nested;
+package jfeoks.newannot.pojo.update.propagator.impl;
+
+import jfeoks.newannot.pojo.update.propagator.PropertyPropagator;
+import jfeoks.newannot.pojo.update.propagator.impl.FieldPropertyPropagator;
 
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  * Created by egorz on 4/27/2017.
  */
-public class PropertyPropogatorBuilder {
+public class PropertyPropagatorBuilder {
     public static <T extends AccessibleObject> PropertyPropagator createPropagator(Class<T> type) {
         if (type.isAssignableFrom(Field.class))
             return new FieldPropertyPropagator();
+        else if (type.isAssignableFrom(Method.class))
+            return new MethodPropertyPropagator();
         throw new UnsupportedOperationException("unsupported type for reading properties");
     }
 }

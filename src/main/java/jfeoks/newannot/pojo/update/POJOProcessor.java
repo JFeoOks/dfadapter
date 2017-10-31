@@ -19,7 +19,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import jfeoks.newannot.pojo.nested.*;
-import jfeoks.newannot.pojo.update.service.PropertiesPropagator;
+import jfeoks.newannot.pojo.update.service.PropertiesPropagationProvider;
 import jfeoks.newannot.pojo.update.service.StartParametersProvider;
 import org.springframework.core.annotation.AnnotationUtils;
 
@@ -62,8 +62,8 @@ public class POJOProcessor {
 //            if (request instanceof SessionAwareRequest)
 //                ((SessionAwareRequest)request).setSessionHandler(sessionHandler);
 
-        PropertiesPropagator propertiesPropagator = new PropertiesPropagator(response, startParameters);
-        propertiesPropagator.propagate();
+        PropertiesPropagationProvider propertiesPropagationProvider = new PropertiesPropagationProvider(response, startParameters);
+        propertiesPropagationProvider.propagate();
         return new MockSessionHandler();
     }
 

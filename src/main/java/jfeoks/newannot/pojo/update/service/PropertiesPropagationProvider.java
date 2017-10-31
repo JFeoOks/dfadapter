@@ -1,22 +1,15 @@
 package jfeoks.newannot.pojo.update.service;
 
-import jfeoks.newannot.pojo.nested.AccessibleObjectCallback;
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.Properties;
 import jfeoks.newannot.pojo.update.callback.WriterCallback;
-import jfeoks.newannot.pojo.update.extractor.ParamsExtractor;
-import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
 
-import java.lang.reflect.Field;
-import java.util.List;
-
-
-public class PropertiesPropagator {
+public class PropertiesPropagationProvider extends AbstractProvider {
 
     private Object target;
     private Properties startParameters;
 
-    public PropertiesPropagator(Object target, Properties startParameters) {
+    public PropertiesPropagationProvider(Object target, Properties startParameters) {
         this.target = target;
         this.startParameters = startParameters;
     }
@@ -31,23 +24,30 @@ public class PropertiesPropagator {
                 target = startParameters.getVariable(effectiveName);
         }
 
-        ParamsExtractor paramsExtractor = ParamsExtractorFactory.newInstances(beanClass);
-
         try {
-            evaluateFields(
-                    paramsExtractor.extractFields(),
+            evaluateAccessibleObjects(
+                    extractAccessibleObjects(beanClass),
                     new WriterCallback(startParameters, target)
             );
 
-            //TODO добавить поддержку setter'ov.
         } catch (Exception e) {
             //TODO
         }
     }
 
-    private void evaluateFields(List<Field> fields, AccessibleObjectCallback callback) throws Exception {
-        for (Field field : fields) {
-            callback.doWith(field);
-        }
+    public Object getTarget() {
+        return target;
+    }
+
+    public void setTarget(Object target) {
+        this.target = target;
+    }
+
+    public Properties getStartParameters() {
+        return startParameters;
+    }
+
+    public void setStartParameters(Properties startParameters) {
+        this.startParameters = startParameters;
     }
 }

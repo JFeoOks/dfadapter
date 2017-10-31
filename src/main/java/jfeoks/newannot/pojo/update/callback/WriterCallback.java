@@ -18,6 +18,7 @@ package jfeoks.newannot.pojo.update.callback;
 
 import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.update.extractor.PropertyExtractor;
+import jfeoks.newannot.pojo.update.propagator.impl.PropertyPropagatorBuilder;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.AccessibleObject;
@@ -41,7 +42,7 @@ public class WriterCallback extends AbstractCallback {
         if (value == null) return;
 
         value = convertValue(accessibleObject, value);
-        PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, value);
+        PropertyPropagatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, value);
     }
 
     @SuppressWarnings("unchecked")

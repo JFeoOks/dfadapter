@@ -3,14 +3,8 @@ package jfeoks.newannot.pojo.update.service;
 import jfeoks.newannot.pojo.nested.DFParam;
 import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.update.callback.ReaderCallback;
-import jfeoks.newannot.pojo.update.extractor.ParamsExtractor;
-import jfeoks.newannot.pojo.update.extractor.impl.ParamsExtractorFactory;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.List;
-
-public class StartParametersProvider {
+public class StartParametersProvider extends AbstractProvider {
 
     private Object request;
 
@@ -53,31 +47,12 @@ public class StartParametersProvider {
         }
     }
 
-    private void evaluateFields(List<Field> fields, AccessibleObjectCallback callback) throws Exception {
-        for (Field field : fields) {
-            callback.doWith(field);
-        }
-    }
-
-    private void evaluateMethods(List<Method> methods, AccessibleObjectCallback callback) throws Exception {
-        for (Method method : methods) {
-            callback.doWith(method);
-        }
-    }
-
     private void readRequestParameters() throws Exception {
         Class<?> requestClass = this.request.getClass();
         evaluateClass(requestClass);
 
-        ParamsExtractor paramsExtractor = ParamsExtractorFactory.newInstances(requestClass);
-
-        evaluateFields(
-                paramsExtractor.extractFields(),
-                new ReaderCallback(this.request, this.startParametersBuilder, false)
-        );
-
-        evaluateMethods(
-                paramsExtractor.extractGetMethods(),
+        evaluateAccessibleObjects(
+                extractAccessibleObjects(requestClass),
                 new ReaderCallback(this.request, this.startParametersBuilder, false)
         );
     }
@@ -86,16 +61,9 @@ public class StartParametersProvider {
         Class<?> responseClass = this.response.getClass();
         evaluateClass(responseClass);
 
-        ParamsExtractor paramsExtractor = ParamsExtractorFactory.newInstances(responseClass);
-
-        evaluateFields(
-                paramsExtractor.extractFields(),
-                new ReaderCallback(this.request, this.startParametersBuilder, true)
-        );
-
-        evaluateMethods(
-                paramsExtractor.extractSetMethods(),
-                new ReaderCallback(this.request, this.startParametersBuilder, true)
+        evaluateAccessibleObjects(
+                extractAccessibleObjects(responseClass),
+                new ReaderCallback(this.request, this.startParametersBuilder, false)
         );
     }
 

@@ -16,6 +16,7 @@
 
 package jfeoks.newannot.pojo.nested;
 
+import jfeoks.newannot.pojo.update.propagator.impl.PropertyPropagatorBuilder;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.AccessibleObject;
@@ -47,7 +48,7 @@ public class WriterCallback implements AccessibleObjectCallback {
             variable = adapter.convert(variable);
         }
 
-        PropertyPropogatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, variable);
+        PropertyPropagatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, variable);
     }
 }
 /*

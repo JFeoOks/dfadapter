@@ -14,7 +14,9 @@
  
 */
 
-package jfeoks.newannot.pojo.nested;
+package jfeoks.newannot.pojo.update.propagator.impl;
+
+import jfeoks.newannot.pojo.update.propagator.PropertyPropagator;
 
 import java.lang.reflect.Field;
 
