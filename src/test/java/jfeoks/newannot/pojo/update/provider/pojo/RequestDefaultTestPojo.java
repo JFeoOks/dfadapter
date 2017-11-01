@@ -47,6 +47,20 @@ public class RequestDefaultTestPojo {
         return methodStringField;
     }
 
+    @DFParam(name = "annotated_field_with_not_annotated_string_method")
+    @DFBidirectionalParamAdapter(
+            readAdapterClass = MockReadAdapter.class,
+            writeAdapterClass = MockWriterAdapter.class,
+            propertyValues = {
+                    @PropertyValue(name = "hello", spelExpression = "'Hello World!'")
+            }
+    )
+    private String annotatedFieldWithNotAnnotatedMethod = "Holly field with not annotated method!";
+
+    public String getAnnotatedFieldWithNotAnnotatedMethod() {
+        return annotatedFieldWithNotAnnotatedMethod;
+    }
+
     public void setMethodStringField(String methodStringField) {
         this.methodStringField = methodStringField;
     }

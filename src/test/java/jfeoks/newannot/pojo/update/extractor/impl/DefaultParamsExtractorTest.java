@@ -19,7 +19,7 @@ public class DefaultParamsExtractorTest {
         DefaultParamsExtractor defaultParamsExtractor = new DefaultParamsExtractor(PojoDefaultTest.class, AccessType.FIELD);
 
         List<Field> fields = defaultParamsExtractor.extractFields();
-        assertEquals(fields.size(), 16);
+        assertEquals(fields.size(), 20);
 
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("strAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("iAnnotated")));
@@ -31,7 +31,7 @@ public class DefaultParamsExtractorTest {
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("bNotAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("bigIntegerNotAnnotated")));
 /*
-        Не будут, так как getter помечен DFParam
+        Не будут, так как getter помечен DFParam => берем значения с него
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodStr")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodI")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("methodB")));
@@ -47,6 +47,11 @@ public class DefaultParamsExtractorTest {
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("excludedMethodI")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("excludedMethodB")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("excludedMethodBiginteger")));
+
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedStrMethod")));
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedIMethod")));
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedBMethod")));
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedBigIntegerMethod")));
     }
 
     @Test
@@ -82,12 +87,17 @@ public class DefaultParamsExtractorTest {
 
         List<Field> fields = defaultParamsExtractor.extractFields();
 
-        assertEquals(fields.size(), 4);
+        assertEquals(fields.size(), 8);
 
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("strAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("iAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("bAnnotated")));
         assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("bigIntegerAnnotated")));
+
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedStrMethod")));
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedIMethod")));
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedBMethod")));
+        assertTrue(fields.contains(PojoDefaultTest.class.getDeclaredField("annotatedBigIntegerMethod")));
     }
 
     @Test
@@ -96,7 +106,7 @@ public class DefaultParamsExtractorTest {
 
         List<Method> methods = defaultParamsExtractor.extractSetMethods();
 
-        assertEquals(methods.size(), 8);
+        assertEquals(methods.size(), 12);
 
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodStr", String.class)));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodI", Integer.class)));
@@ -107,6 +117,11 @@ public class DefaultParamsExtractorTest {
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodINotAnnotated", Integer.class)));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodBNotAnnotated", boolean.class)));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setMethodBigIntegerNotAnnotated", BigInteger.class)));
+
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setAnnotatedStrMethod", String.class)));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setAnnotatedIMethod", Integer.class)));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setAnnotatedBMethod", boolean.class)));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("setAnnotatedBigIntegerMethod", BigInteger.class)));
     }
 
     @Test
@@ -115,7 +130,7 @@ public class DefaultParamsExtractorTest {
 
         List<Method> methods = defaultParamsExtractor.extractGetMethods();
 
-        assertEquals(methods.size(), 8);
+        assertEquals(methods.size(), 12);
 
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodStr")));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodI")));
@@ -126,5 +141,10 @@ public class DefaultParamsExtractorTest {
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodINotAnnotated")));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("isMethodBNotAnnotated")));
         assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getMethodBigIntegerNotAnnotated")));
+
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getAnnotatedStrMethod")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getAnnotatedIMethod")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("isAnnotatedBMethod")));
+        assertTrue(methods.contains(PojoDefaultTest.class.getDeclaredMethod("getAnnotatedBigIntegerMethod")));
     }
 }

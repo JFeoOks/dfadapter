@@ -169,4 +169,50 @@ public class PojoDefaultTest {
     public void setExcludedMethodBiginteger(BigInteger excludedMethodBiginteger) {
         this.excludedMethodBiginteger = excludedMethodBiginteger;
     }
+
+    //FIELD ANNOTATED BUT METHOD NOT
+
+    @DFParam(name = "annotated_string_method")
+    private String annotatedStrMethod = "note annotated string";
+
+    @DFParam(name = "annotated_integer_method")
+    Integer annotatedIMethod = 1;
+
+    @DFParam(name = "annotated_boolean_method")
+    protected boolean annotatedBMethod = true;
+
+    @DFParam(name = "annotated_biginteger_method")
+    public BigInteger annotatedBigIntegerMethod = new BigInteger("2");
+
+    public String getAnnotatedStrMethod() {
+        return annotatedStrMethod;
+    }
+
+    public void setAnnotatedStrMethod(String annotatedStrMethod) {
+        this.annotatedStrMethod = annotatedStrMethod;
+    }
+
+    public Integer getAnnotatedIMethod() {
+        return annotatedIMethod;
+    }
+
+    public void setAnnotatedIMethod(Integer annotatedIMethod) {
+        this.annotatedIMethod = annotatedIMethod;
+    }
+
+    public boolean isAnnotatedBMethod() {
+        return annotatedBMethod;
+    }
+
+    public void setAnnotatedBMethod(boolean annotatedBMethod) {
+        this.annotatedBMethod = annotatedBMethod;
+    }
+
+    public BigInteger getAnnotatedBigIntegerMethod() {
+        return annotatedBigIntegerMethod;
+    }
+
+    public void setAnnotatedBigIntegerMethod(BigInteger annotatedBigIntegerMethod) {
+        this.annotatedBigIntegerMethod = annotatedBigIntegerMethod;
+    }
 }

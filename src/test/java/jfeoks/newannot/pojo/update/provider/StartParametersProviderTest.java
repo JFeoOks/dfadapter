@@ -65,7 +65,7 @@ public class StartParametersProviderTest {
 
         startParametersProvider.buildStartParameters();
 
-        assertEquals(startParametersBuilder.getProperties().size(), 4);
+        assertEquals(startParametersBuilder.getProperties().size(), 5);
 
         ValueHolder annotatedHelloField = startParametersBuilder.getProperties().get("annotated_hello_field");
         assertNotNull(annotatedHelloField);
@@ -83,5 +83,8 @@ public class StartParametersProviderTest {
         assertNotNull(annotatedOverridedStringMethod);
         assertEquals(annotatedOverridedStringMethod.getValue(), "Read string = Holly method; property source string = Hello Overrided World!");
 
+        ValueHolder annotatedFieldWithNotAnnotatedStringMethod = startParametersBuilder.getProperties().get("annotated_field_with_not_annotated_string_method");
+        assertNotNull(annotatedFieldWithNotAnnotatedStringMethod);
+        assertEquals(annotatedFieldWithNotAnnotatedStringMethod.getValue(), "Read string = Holly field with not annotated method!; property source string = Hello World!");
     }
 }
