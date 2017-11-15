@@ -13,7 +13,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 @Configuration
 @ComponentScan(basePackages = "jfeoks")
-public class UpdatedAdapterConfiguration {
+public class PojoApiConfiguration {
 
     @Bean
     @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
