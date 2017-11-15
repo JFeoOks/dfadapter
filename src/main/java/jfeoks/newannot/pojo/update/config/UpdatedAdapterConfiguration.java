@@ -4,10 +4,7 @@ import jfeoks.newannot.pojo.update.ExpressionPropertySource;
 import jfeoks.newannot.pojo.update.POJOProcessor;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 import org.springframework.context.expression.BeanFactoryResolver;
 import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.ExpressionParser;
@@ -19,7 +16,7 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 public class UpdatedAdapterConfiguration {
 
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public ExpressionPropertySource expressionPropertySourceBuilder(ExpressionParser parser, EvaluationContext evaluationContext) {
         return new ExpressionPropertySource(parser, evaluationContext);
     }

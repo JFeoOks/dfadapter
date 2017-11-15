@@ -9,8 +9,6 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext appContext = new AnnotationConfigApplicationContext(UpdatedAdapterConfiguration.class);
 
-        POJOProcessor pojoProcessor = appContext.getBean(POJOProcessor.class);
-
-
+        //Something
     }
 }

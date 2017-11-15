@@ -64,9 +64,9 @@ public class ReaderCallbackTest {
         readerCallback.doWith(annotatedMethod);
 
         ValueHolder valueHolder = builder.getProperties().get("testGetAnnotatedMethodFieldBigInteger");
-        assertEquals(valueHolder.getPropertyName(), "testGetAnnotatedMethodFieldBigInteger");
+        assertEquals("testGetAnnotatedMethodFieldBigInteger", valueHolder.getPropertyName());
         assertNull(valueHolder.getValue());
-        assertEquals(valueHolder.getShowPropertyPolicy(), ShowPropertyPolicy.MASK);
+        assertEquals(ShowPropertyPolicy.MASK, valueHolder.getShowPropertyPolicy());
         assertTrue(valueHolder.isMdcAware());
     }
 
@@ -88,10 +88,10 @@ public class ReaderCallbackTest {
                         .propertyValues()
         );
 
-        assertEquals(expressionPropertySource.size(), 3);
+        assertEquals(3, expressionPropertySource.size());
 
-        assertEquals(expressionPropertySource.get("hello string"), "Hello World!");
-        assertEquals(expressionPropertySource.get("bye string", String.class), "Bye World!");
+        assertEquals("Hello World!", expressionPropertySource.get("hello string"));
+        assertEquals("Bye World!", expressionPropertySource.get("bye string", String.class));
         assertTrue(expressionPropertySource.get("bean test") instanceof PropertySourceBuilderPojo);
     }
 
