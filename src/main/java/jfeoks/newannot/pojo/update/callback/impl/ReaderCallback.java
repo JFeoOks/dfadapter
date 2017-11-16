@@ -23,6 +23,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.reflect.AccessibleObject;
+import java.lang.reflect.Method;
 
 public class ReaderCallback extends AbstractCallback {
 
@@ -46,6 +47,8 @@ public class ReaderCallback extends AbstractCallback {
         boolean mdcAware = false;
 
         DFParam dfParam = AnnotationUtils.getAnnotation(accessibleObject, DFParam.class);
+        if (dfParam == null && accessibleObject instanceof Method) dfParam = AnnotationUtils.findAnnotation((Method) accessibleObject, DFParam.class);
+
         PropertyExtractor propertyExtractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
 
         if (dfParam != null) {

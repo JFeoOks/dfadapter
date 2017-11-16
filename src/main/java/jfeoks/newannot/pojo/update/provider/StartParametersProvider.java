@@ -43,7 +43,7 @@ public class StartParametersProvider extends AbstractProvider {
         return startParametersBuilder.build();
     }
 
-    private void evaluateClass(Object obj) {
+    private Class<?> evaluateClass(Object obj) {
         Class<?> beanClass = obj.getClass();
 
         if (beanClass.isAnnotationPresent(DFParam.class)) {
@@ -51,11 +51,12 @@ public class StartParametersProvider extends AbstractProvider {
             String effectiveName = dfParam.name();
             startParametersBuilder.setVariable(effectiveName, obj);
         }
+
+        return beanClass;
     }
 
     private void readRequestParameters() throws Exception {
-        Class<?> requestClass = this.request.getClass();
-        evaluateClass(requestClass);
+        Class<?> requestClass = evaluateClass(this.request);
 
         evaluateAccessibleObjects(
                 extractAccessibleObjects(requestClass),
@@ -64,8 +65,7 @@ public class StartParametersProvider extends AbstractProvider {
     }
 
     private void readResponseParameters() throws Exception {
-        Class<?> responseClass = this.response.getClass();
-        evaluateClass(responseClass);
+        Class<?> responseClass = evaluateClass(this.response);
 
         evaluateAccessibleObjects(
                 extractAccessibleObjects(responseClass),

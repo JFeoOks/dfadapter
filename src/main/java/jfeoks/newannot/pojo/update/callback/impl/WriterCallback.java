@@ -20,8 +20,10 @@ import jfeoks.newannot.pojo.nested.*;
 import jfeoks.newannot.pojo.update.extractor.PropertyExtractor;
 import jfeoks.newannot.pojo.update.propagator.impl.PropertyPropagatorBuilder;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.reflect.AccessibleObject;
+import java.lang.reflect.Method;
 
 public class WriterCallback extends AbstractCallback {
 
@@ -46,6 +48,8 @@ public class WriterCallback extends AbstractCallback {
     @SuppressWarnings("unchecked")
     private <T extends AccessibleObject> String getPropertyName(T accessibleObject) {
         DFParam dfParam = accessibleObject.getAnnotation(DFParam.class);
+        if (dfParam == null && accessibleObject instanceof Method) dfParam = AnnotationUtils.findAnnotation((Method) accessibleObject, DFParam.class);
+
         PropertyExtractor propertyExtractor = PropertyExtractorBuilder.createExtractor(accessibleObject.getClass());
 
         String name = null;
