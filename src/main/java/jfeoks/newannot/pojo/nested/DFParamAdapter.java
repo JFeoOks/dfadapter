@@ -15,9 +15,6 @@
 */
 package jfeoks.newannot.pojo.nested;
 
-import jfeoks.newannot.pojo.nested.DataFlowParameterAdapter;
-import jfeoks.newannot.pojo.nested.EmptyDFParameterAdapter;
-
 import java.lang.annotation.*;
 
 @Inherited
