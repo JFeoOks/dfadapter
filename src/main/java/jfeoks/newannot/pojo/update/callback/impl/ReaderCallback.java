@@ -67,7 +67,7 @@ public class ReaderCallback extends AbstractCallback {
             builder.declareVariable(propertyName, mdcAware);
         else {
             try {
-                value = convertValueForRead(accessibleObject, value);
+                value = convertValue(accessibleObject, value, AdapterType.READ);
             } catch (InstantiationException ie) {
 //            ExceptionUtils.<RuntimeException>castAndThrow(ie);
             }

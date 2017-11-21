@@ -41,7 +41,7 @@ public class WriterCallback extends AbstractCallback {
         String propertyName = getPropertyName(accessibleObject);
         Object value = properties.getVariable(propertyName);
 
-        if (value != null) value = convertValueForWrite(accessibleObject, value);
+        if (value != null) value = convertValue(accessibleObject, value, AdapterType.WRITE);
         PropertyPropagatorBuilder.createPropagator(accessibleObject.getClass()).propagate(target, accessibleObject, value);
     }
 
